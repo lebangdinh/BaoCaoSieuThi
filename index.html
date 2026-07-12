@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thi Đua Siêu Thị - V5 Pro Fixed</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+:root{--bg:#07111f;--panel:#0d1b2f;--panel2:#13223a;--text:#e9f1ff;--muted:#8ea3c2;--line:#263955;--blue:#3b82f6;--green:#22c55e;--red:#ef4444;--orange:#f59e0b;--purple:#8b5cf6;--cyan:#06b6d4;--card:#0f1e34}*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#050a13,#081629 55%,#05101f);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;font-size:14px}.app{display:flex;min-height:100vh}.side{width:270px;background:#081426;border-right:1px solid var(--line);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto}.brand{font-size:19px;font-weight:900;display:flex;gap:10px;align-items:center;margin-bottom:18px}.badge{font-size:11px;background:#0ea5e9;color:white;padding:3px 7px;border-radius:999px}.nav button{width:100%;border:0;background:transparent;color:#cbd8ee;text-align:left;padding:12px;border-radius:11px;font-weight:800;cursor:pointer;margin:2px 0}.nav button:hover,.nav button.active{background:linear-gradient(90deg,#2563eb,#7c3aed);color:white}.main{flex:1;min-width:0}.top{position:sticky;top:0;z-index:5;height:64px;background:rgba(7,17,31,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 20px}.title{font-weight:900}.actions{display:flex;gap:9px;align-items:center}.btn{border:1px solid var(--line);background:#0e1b2e;color:#eaf2ff;border-radius:10px;padding:10px 13px;font-weight:900;cursor:pointer}.btn.primary{background:linear-gradient(90deg,#059669,#22c55e);border:0}.btn.blue{background:linear-gradient(90deg,#2563eb,#4f46e5);border:0}.btn.red{background:#7f1d1d;border-color:#ef4444}.content{padding:18px;max-width:1800px;margin:auto}.screen{display:none}.screen.active{display:block}.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g5{grid-template-columns:repeat(5,minmax(0,1fr))}.card{background:linear-gradient(180deg,rgba(17,32,54,.98),rgba(11,24,42,.98));border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 45px rgba(0,0,0,.25)}.pad{padding:16px}.kpi{background:#10213a;border:1px solid var(--line);border-radius:14px;padding:14px;min-height:96px}.kpi small{display:block;color:var(--muted);font-weight:800}.kpi b{display:block;font-size:25px;margin-top:8px}.muted{color:var(--muted)}.green{color:var(--green)!important}.red{color:var(--red)!important}.orange{color:var(--orange)!important}.blue{color:#60a5fa!important}.purple{color:#a78bfa!important}.section-title{font-weight:950;letter-spacing:.03em;text-transform:uppercase;color:#dbe7ff;margin:0 0 12px}.progress{height:8px;background:#253650;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e);border-radius:20px;max-width:100%}.table-wrap{border:1px solid var(--line);border-radius:13px;overflow:auto}table{border-collapse:collapse;width:100%;min-width:980px}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle;white-space:nowrap}th{background:#10213a;color:#cdd9ed;font-size:12px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0;z-index:1}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}tbody tr:hover{background:#10213a}.rank{font-weight:950;color:#fbbf24}.pill{display:inline-block;border-radius:999px;padding:4px 9px;font-weight:900;font-size:12px;margin:2px}.pill.g{background:#063b2a;color:#4ade80}.pill.r{background:#48111e;color:#ff6d8a}.pill.o{background:#462a09;color:#fbbf24}.pill.b{background:#112a52;color:#60a5fa}.input-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.inputbox textarea{width:100%;height:185px;background:#061222;color:#eaf2ff;border:1px solid var(--line);border-radius:12px;padding:12px;resize:vertical;font-family:Consolas,monospace}.inputbox label{display:flex;justify-content:space-between;font-weight:900;margin-bottom:7px}.ok{color:#22c55e}.quick-panel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0 18px}.quick-main,.quick-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;border:1px solid var(--line);background:#0e1b2e;color:#dbeafe;border-radius:10px;padding:9px 11px;font-weight:900}.quick-main:hover,.quick-link:hover{background:#123056;color:#fff;border-color:#3b82f6}.source-links{min-height:32px;margin:-2px 0 8px;display:flex;gap:8px;flex-wrap:wrap}.quick-link{font-size:12px;padding:6px 9px;background:#10213a;color:#93c5fd}@media(max-width:1100px){.quick-panel{grid-template-columns:1fr 1fr}}@media(max-width:640px){.quick-panel{grid-template-columns:1fr}}.employee-card{background:#0d1b2f;border:1px solid var(--line);border-radius:16px;padding:15px}.emp-head{display:flex;justify-content:space-between;gap:10px}.avatar{min-width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#020617;border:2px solid #334155;font-weight:950}.tabs-inline{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:13px}.tabs-inline button{border:1px solid var(--line);background:#0d1b2f;color:#dbeafe;border-radius:999px;padding:8px 12px;font-weight:900;cursor:pointer}.tabs-inline button.active{background:#2563eb}.heat{text-align:center;font-weight:900}.heat.good{background:#05351f;color:#4ade80}.heat.mid{background:#412905;color:#fbbf24}.heat.bad{background:#430d11;color:#ff6b6b}.heat.none{background:#172033;color:#64748b}.light{background:white;color:#162033;border-radius:16px;padding:16px}.light table{color:#162033}.light th{background:#f1f5f9;color:#334155}.light td,.light th{border-bottom:1px solid #e5e7eb}.hero{background:#111827;border:1px solid #334155;border-radius:18px;padding:18px;overflow:hidden}.hero h2{margin:0 0 14px;color:#ff3152}.monthbar{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.mini{background:#101f36;border:1px solid var(--line);border-radius:13px;padding:12px;text-align:center}.mini b{font-size:24px}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:30;align-items:center;justify-content:center}.modal.show{display:flex}.box{width:min(760px,94vw);background:#0b1728;border:1px solid var(--line);border-radius:16px;padding:18px}.checkgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:14px 0}.checkgrid label{background:#10213a;border:1px solid var(--line);border-radius:10px;padding:10px}.toast{position:fixed;right:18px;bottom:18px;background:#064e3b;border:1px solid #10b981;color:#d1fae5;border-radius:12px;padding:12px 15px;display:none;z-index:40}.toast.show{display:block}
+.store-hero{background:linear-gradient(120deg,#0b6b3a,#086333 55%,#064e3b);border:1px solid rgba(34,197,94,.35);border-radius:18px;padding:22px;display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:18px;align-items:center;box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.store-hero .main-kpi{display:flex;gap:16px;align-items:center}.store-hero .target-icon{width:64px;height:64px;border-radius:18px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-size:34px}.store-hero small{color:#c8f6dd;font-weight:900;text-transform:uppercase}.store-hero b{font-size:30px;display:block}.ring{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#22c55e var(--v),rgba(255,255,255,.2) 0);position:relative}.ring:after{content:"";position:absolute;inset:8px;background:#064e3b;border-radius:50%}.ring span{position:relative;z-index:1;font-weight:950}.store-insights{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-top:14px}.hm-cell{font-weight:950;text-align:center;border-radius:0}.hm-good{background:#064e3b;color:#86efac}.hm-mid{background:#5b4308;color:#fde68a}.hm-bad{background:#55151d;color:#fca5a5}.hm-none{background:#172033;color:#64748b}.quick-card{background:#10213a;border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}.quick-card b{font-size:24px}.store-name-short{font-weight:950;color:#eaf2ff}.tbl-note{margin-top:10px;color:#9fb0cc;font-size:12px}
+
+.total-hero{background:linear-gradient(135deg,#0b6b3a,#09713d 60%,#064e3b);border:1px solid rgba(34,197,94,.4);border-radius:20px;padding:22px;display:grid;grid-template-columns:1.8fr repeat(3,1fr) 120px;gap:18px;align-items:center;box-shadow:0 24px 60px rgba(0,0,0,.3);margin-bottom:16px}.total-hero .hero-title{display:flex;gap:16px;align-items:center}.total-hero .hero-icon{width:66px;height:66px;border-radius:18px;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:32px}.total-hero small{color:#c9f8df;text-transform:uppercase;font-weight:900;letter-spacing:.06em}.total-hero b{font-size:30px;display:block;margin-top:4px}.total-hero .ring{margin:auto}.total-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;margin-bottom:14px}.total-light{background:#f8fafc;color:#172033;border-radius:18px;padding:18px;border:1px solid #e5e7eb;box-shadow:0 18px 45px rgba(0,0,0,.12)}.total-light h2{margin:0 0 14px;color:#0f5132;text-transform:uppercase}.total-light .table-wrap{border-color:#e5e7eb}.total-light table{color:#172033;min-width:980px}.total-light th{background:#18783d;color:white}.total-light td,.total-light th{border-bottom:1px solid #e5e7eb}.total-light tbody tr:nth-child(odd){background:#fffdf2}.total-light tbody tr:nth-child(even){background:#f1fbf4}.total-light .rank{color:#eab308}.total-chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 8px;font-weight:900;font-size:12px}.total-chip.good{background:#dcfce7;color:#15803d}.total-chip.bad{background:#fee2e2;color:#dc2626}.total-chip.warn{background:#fef3c7;color:#b45309}.total-section{margin-top:22px}.total-section-title{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:950;margin:0 0 12px;color:#dbeafe}.total-section-title:before{content:"";width:7px;height:34px;border-radius:99px;background:#22c55e}.matrix-table th{text-align:center}.matrix-table td{text-align:center}.matrix-table td:first-child,.matrix-table th:first-child{text-align:left;position:sticky;left:0;z-index:2}.matrix-table th:first-child{z-index:3}.total-ai-card{background:linear-gradient(180deg,#10213a,#0b1728);border:1px solid var(--line);border-radius:18px;padding:16px}.total-ai-item{display:flex;gap:12px;background:#0b1b30;border:1px solid var(--line);border-radius:14px;padding:13px;margin-bottom:10px}.total-ai-item .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:#102a46}.total-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.total-stat{background:#0e1d32;border:1px solid var(--line);border-radius:15px;padding:15px}.total-stat b{font-size:26px}.total-small-note{font-size:12px;color:#8ea3c2;margin-top:10px}.total-mini-progress{height:7px;width:100%;background:#dbe4ef;border-radius:10px;overflow:hidden}.total-mini-progress span{display:block;height:100%;border-radius:10px;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e)}
+@media(max-width:1150px){.total-hero,.total-grid,.total-stat-row{grid-template-columns:1fr}}
+
+@media(max-width:1150px){.store-hero,.store-insights{grid-template-columns:1fr}}
+@media(max-width:1150px){.app{display:block}.side{position:relative;height:auto;width:auto}.g2,.g3,.g4,.g5,.input-grid,.monthbar{grid-template-columns:1fr}.top{position:relative}table{min-width:850px}}@media print{.side,.top,.no-print{display:none!important}.app{display:block}.screen{display:block!important;break-after:page}.card{box-shadow:none}}
+
+/* V6 Pro employee card ranking */
+.emp-card-grid{display:grid;grid-template-columns:repeat(3,minmax(280px,1fr));gap:18px;margin-top:16px}
+.emp-rank-card{position:relative;background:#fff;color:#101827;border:3px solid #2563eb;border-radius:24px;padding:22px 22px 18px;box-shadow:0 16px 34px rgba(0,0,0,.18);min-height:420px;overflow:hidden;cursor:pointer;transition:.18s transform,.18s box-shadow}
+.emp-rank-card:hover{transform:translateY(-3px);box-shadow:0 24px 46px rgba(0,0,0,.25)}
+.emp-rank-card.rank-1{border-color:#059669}.emp-rank-card.rank-2{border-color:#2563eb}.emp-rank-card.rank-3{border-color:#7c3aed}.emp-rank-card.bottom{border-color:#e11d48}.emp-rank-card.mid{border-color:#d97706}
+.emp-rank-head{display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;margin-bottom:14px}.emp-rank-badge{width:56px;height:56px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font-weight:950;font-size:22px}.emp-rank-name{font-weight:950;font-size:21px;line-height:1.05;text-transform:uppercase;color:#111827}.emp-rank-id{color:#9aa5b5;font-weight:900;letter-spacing:.08em}.emp-rank-score{font-size:28px;font-weight:950;color:#111827;text-align:right}.emp-rank-score small{display:block;font-size:10px;color:#64748b;text-transform:uppercase}
+.emp-mini-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:12px}.emp-mini-kpis .m{border-radius:13px;padding:10px 6px;text-align:center;border:1px solid #e5e7eb;font-weight:900}.emp-mini-kpis .m small{display:block;font-size:9px;text-transform:uppercase;line-height:1.15}.emp-mini-kpis .m b{font-size:20px;display:block;margin-top:3px}.m.g{background:#dcfce7;color:#059669}.m.b{background:#dbeafe;color:#2563eb}.m.o{background:#ffedd5;color:#ea580c}.m.r{background:#ffe4e6;color:#e11d48}
+.emp-rank-table{width:100%;min-width:0;border-collapse:collapse;color:#111827}.emp-rank-table th,.emp-rank-table td{padding:7px 4px;border-bottom:1px dashed #dbe1ea;white-space:nowrap;font-size:12px}.emp-rank-table th{background:#fff;color:#1e2b55;position:static;text-align:left}.emp-rank-table td.num,.emp-rank-table th.num{text-align:right}.emp-rank-table .subj{max-width:130px;overflow:hidden;text-overflow:ellipsis;font-weight:950}.emp-pill{border-radius:999px;padding:3px 7px;color:#fff;font-weight:950;display:inline-block}.emp-pill.green{background:#059669}.emp-pill.red{background:#e11d48}.emp-pill.orange{background:#f59e0b}.emp-rank-coach{margin-top:12px;padding:10px;border-radius:13px;background:#f8fafc;border:1px solid #e2e8f0;font-size:12px;color:#334155}.emp-rank-footer{display:flex;justify-content:space-between;align-items:center;color:#64748b;font-size:11px;margin-top:12px;font-weight:800}.emp-rank-footer b{color:#047857}.emp-store-title{margin:26px 0 6px;text-align:center;font-size:30px;font-weight:950;color:#eaf2ff;text-transform:uppercase;letter-spacing:.04em}.emp-store-sub{text-align:center;color:#8ea3c2;font-weight:800;margin-bottom:10px}.emp-card-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center}.emp-card-actions .right{display:flex;gap:8px;flex-wrap:wrap}
+@media(max-width:1500px){.emp-card-grid{grid-template-columns:repeat(2,minmax(280px,1fr))}}@media(max-width:900px){.emp-card-grid{grid-template-columns:1fr}.emp-mini-kpis{grid-template-columns:repeat(2,1fr)}}
+
+
+.rank-store-export-block{padding:10px 0 24px}.rank-store-export-block + .rank-store-export-block{margin-top:28px;border-top:1px solid rgba(148,163,184,.25)}
+.emp-rank-card{min-height:auto}.emp-rank-table th,.emp-rank-table td{padding:5px 4px;font-size:11px}.emp-rank-table .subj{max-width:150px}.emp-card-grid{align-items:start}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side"><div class="brand">🏆 <span>THI ĐUA SIÊU THỊ</span><span class="badge">V5 FIXED</span></div><div class="nav" id="nav"></div></aside>
+<main class="main"><div class="top"><div class="title">Dashboard thi đua vận hành thật <span class="muted">| Import xong tự tính lại</span></div><div class="actions no-print"><select id="monthSelect" class="btn" onchange="renderAll()"><option value="2026-07">07/2026</option></select><select id="chainFilter" class="btn" onchange="STATE.scopeChain=this.value;STATE.scopeStore='all';renderAll()"><option value="all">Tất cả chuỗi</option><option value="Topzone">Topzone</option><option value="TGDĐ">TGDĐ</option></select><select id="storeFilter" class="btn" onchange="STATE.scopeStore=this.value;renderAll()"><option value="all">Tất cả siêu thị</option></select><button class="btn" onclick="STATE.dayOverride=null;renderAll()">Auto ngày</button><button class="btn blue" onclick="renderAll();toast('Đã tính lại dữ liệu')">↻ Tính lại</button><button class="btn primary" onclick="openExport()">📸 Xuất ảnh</button></div></div><div class="content">
+<section id="totalComp" class="screen active"></section><section id="dashboard" class="screen"></section><section id="pushTZ" class="screen"></section><section id="pushTGDD" class="screen"></section><section id="rankStore" class="screen"></section><section id="storeComp" class="screen"></section><section id="rankEmp" class="screen"></section><section id="rankEmpFull" class="screen"></section><section id="detailEmp" class="screen"></section><section id="income" class="screen"></section><section id="scoreRule" class="screen"></section><section id="ai" class="screen"></section><section id="import" class="screen"></section><section id="compare" class="screen"></section><section id="settings" class="screen"></section>
+</div></main></div>
+<div id="exportModal" class="modal"><div class="box"><h2>📸 Xuất báo cáo</h2><p class="muted">Chọn các tab cần xuất. Tool sẽ tải từng ảnh PNG.</p><button class="btn blue" onclick="selectExport(true)">Chọn tất cả</button> <button class="btn" onclick="selectExport(false)">Bỏ chọn</button><div id="exportChecks" class="checkgrid"></div><div style="display:flex;justify-content:flex-end;gap:8px"><button class="btn" onclick="closeExport()">Đóng</button><button class="btn primary" onclick="exportSelected()">Xuất ảnh</button></div></div></div><div class="toast" id="toast"></div>
+<script>
+const DEFAULT={
+nhansu:`MaNV	TenNV	Chuoi	SieuThi
+29649	Nguyễn Thị Thy	TGDĐ	TGD_DNA_HCH - 351 Nguyễn Hữu Thọ
+204201	Lê Văn Nhân	TGDĐ	TGD_DNA_HCH - 351 Nguyễn Hữu Thọ
+259623	Trần Thị Huyền Trang	TGDĐ	TGD_DNA_HCH - 351 Nguyễn Hữu Thọ
+269167	 Lê Thị Thanh Trâm	TGDĐ	TGD_DNA_HCH - 351 Nguyễn Hữu Thọ
+83089	Trần Minh Hải	Topzone	AAR_DNA_HCH - 351 Nguyễn Hữu Thọ
+98486	Nguyễn Quỳnh Anh	Topzone	AAR_DNA_HCH - 351 Nguyễn Hữu Thọ
+183180	Đỗ Nhật Trinh	Topzone	AAR_DNA_HCH - 351 Nguyễn Hữu Thọ
+189769	Tạ Đức Hiếu	Topzone	AAR_DNA_HCH - 351 Nguyễn Hữu Thọ
+45500	Trần Thị Mỹ Trang	Topzone	AAR_DNA_HCH - 351 Nguyễn Hữu Thọ
+170266	Lê Thị Mỹ Linh	Topzone	AAR_DNA_HCH - 351 Nguyễn Hữu Thọ`,
+store:`Siêu thị	% HT Target Dự Kiến (QĐ)	DTQĐ	Target (QĐ)	+/- DTCK Tháng (QĐ)
+TGD_DNA_HCH - 351 Nguyễn Hữu Thọ	101.14%	457	3,204	-26.39%
+AAR_DNA_HCH - 351 Nguyễn Hữu Thọ	189.91%	1,839	6,863	47.02%`,
+kpiTZ:`Ngành hàng	Hiện tại	Gap (Thiếu)	Mục tiêu	% Hoàn Thành	% Dự Kiến	Cần thêm/ngày
+Ví trả sau	90	99	189.38	47.5%	368.3%	3.7
+TRẢ CHẬM HOMECREDIT	133.02	620	752.91	17.7%	136.9%	23.0
+Đồng hồ - Phụ kiện	49.02	278	326.72	15.0%	116.3%	10.3
+BẢO HIỂM	27.72	212	239.78	11.6%	89.6%	7.9
+FECREDIT, SHINHAN, SAMSUNG FINANCE+	54.89	468	522.68	10.5%	81.4%	17.3
+Dịch vụ VAS	3	46	49	6.1%	47.4%	1.7
+MỞ THẺ TÍN DỤNG TPBANK EVO VÀ VPBANK MWG	0	2	2	0.0%	0.0%	0.1
+Loa	0	14	13.68	0.0%	0.0%	0.5
+BẢO HIỂM THỢ ĐIỆN MÁY XANH	7.52	0	5.28	142.4%	1103.8%	0.0`,
+kpiTGDD:`Ngành hàng	Hiện tại	Gap (Thiếu)	Mục tiêu	% Hoàn Thành	% Dự Kiến	Cần thêm/ngày
+Laptop	20.36	60	79.94	25.5%	197.4%	2.2
+Dịch vụ VAS	6	26	32	18.8%	145.3%	1.0
+TRẢ CHẬM HOMECREDIT	68.34	397	465	14.7%	113.9%	14.7
+FECREDIT, SHINHAN, SAMSUNG FINANCE+	33.41	220	253.55	13.2%	102.1%	8.2
+SIM MOBIFONE&VINAPHONE&SIM DMX	4	40	44	9.1%	70.5%	1.5
+NẠP RÚT TIỀN TÀI KHOẢN NGÂN HÀNG THÁNG 07/2026	8	93	101	7.9%	61.4%	3.4
+Sim Tổng	5	60	65	7.7%	59.6%	2.2
+ĐIỆN THOẠI & TABLET ANDROID	57.88	939	996.47	5.8%	45.0%	34.8
+Đồng hồ - Phụ kiện	19.58	902	921.84	2.1%	16.5%	33.4
+BẢO HIỂM	2.51	212	214.57	1.2%	9.1%	7.9
+DOANH THU ĐỒNG HỒ	1.66	152	154.08	1.1%	8.3%	5.6
+Điện thoại Realme	0	89	89.21	0.0%	0.0%	3.3
+Điện thoại Vivo	0	57	57	0.0%	0.0%	2.1
+Ví trả sau	0	65	65.04	0.0%	0.0%	2.4
+MANGO PLUS + ICALLME	0	15	15	0.0%	0.0%	0.6
+MỞ THẺ TÍN DỤNG TPBANK EVO VÀ VPBANK MWG	0	2	2	0.0%	0.0%	0.1
+Cho vay tiền mặt	0	14	13.5	0.0%	0.0%	0.5
+Camera	-1	31	30	-3.3%	-25.8%	1.1
+Loa	-1.57	10	8.38	-18.7%	-145.2%	0.4
+BẢO HIỂM THỢ ĐIỆN MÁY XANH	22.78	0	6.97	326.8%	2532.9%	0.0`,
+thiTZ:`Phòng ban
+BẢO HIỂM THỢ ĐIỆN MÁY XANH
+BẢO HIỂM
+FECREDIT, SHINHAN, SAMSUNG FINANCE+
+TRẢ CHẬM HOMECREDIT
+NẠP RÚT TIỀN TÀI KHOẢN NGÂN HÀNG THÁNG 07/2026
+Đồng hồ - Phụ kiện
+Ví trả sau
+Dịch vụ VAS
+DTLK	DTLK	DTLK	DTLK	SLLK	DTLK	DTLK	SLLK
+Tổng	7.52	27.72	54.89	133.02	2.00	47.77	90.00	3.00
+BP All In One - ĐMX	7.52	27.72	54.89	133.02	2.00	47.77	90.00	3.00
+Trần Thị Mỹ Trang - 45500	3.76	5.52	0.00	19.06	0.00	1.15	0.00	1.00
+Trần Minh Hải - 83089	3.76	9.34	21.56	39.71	0.00	5.86	30.00	0.00
+Lê Thị Mỹ Linh - 170266	0.00	12.85	33.32	0.00	0.00	2.56	0.00	1.00
+Đỗ Nhật Trinh - 183180	0.00	0.00	0.00	74.24	0.00	10.06	0.00	1.00
+Nguyễn Quỳnh Anh - 98486	0.00	0.00	0.00	0.00	2.00	25.99	0.00	0.00
+Tạ Đức Hiếu - 189769	0.00	0.00	0.00	0.00	0.00	2.16	60.00	0.00`,
+thiTGDD:`Phòng ban
+ĐIỆN TỬ & ĐIỆN LẠNH, ĐIỆN GIA DỤNG HÃNG LG
+BẢO HIỂM THỢ ĐIỆN MÁY XANH
+BẢO HIỂM
+FECREDIT, SHINHAN, SAMSUNG FINANCE+
+TRẢ CHẬM HOMECREDIT
+TRẢ CHẬM ĐIỆN MÁY VÀ GIA DỤNG
+Camera
+NẠP RÚT TIỀN TÀI KHOẢN NGÂN HÀNG THÁNG 07/2026
+SIM MOBIFONE&VINAPHONE&SIM DMX
+Sim Tổng
+Máy Lọc Nước
+ĐIỆN THOẠI & TABLET ANDROID
+Laptop
+Đồng hồ - Phụ kiện
+Loa
+DOANH THU ĐỒNG HỒ
+Dịch vụ VAS
+DTLK	DTLK	DTLK	DTLK	DTLK	DTLK	SLLK	SLLK	SLLK	SLLK	DTLK	DTLK	DTLK	DTLK	DTLK	DTLK	SLLK
+Tổng	10.33	19.02	2.51	33.41	68.34	20.05	-1.00	8.00	4.00	5.00	9.72	57.88	20.36	19.58	-1.57	1.66	6.00
+BP All In One - ĐMX	0.00	19.02	2.51	33.41	68.34	0.00	-1.00	6.00	4.00	5.00	0.00	57.88	20.36	19.58	-1.57	1.66	6.00
+Lê Văn Nhân - 204201	0.00	1.88	0.00	11.84	20.50	0.00	0.00	2.00	2.00	3.00	0.00	32.14	0.00	1.78	0.00	0.00	0.00
+Trần Thị Huyền Trang - 259623	0.00	6.58	0.00	21.56	0.00	0.00	0.00	0.00	2.00	2.00	0.00	10.26	0.00	6.02	0.00	0.00	0.00
+Lê Thị Thanh Trâm - 269167	0.00	3.97	2.51	0.00	25.91	0.00	-1.00	4.00	0.00	0.00	0.00	15.48	20.36	3.72	0.00	0.19	4.00
+Nguyễn Thị Thy - 29649	0.00	6.58	0.00	0.00	21.94	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	8.06	-1.57	1.47	2.00`,
+dtTZ:`Nhân viên	DTLK	DTQĐ	Hiệu quả QĐ	Số lượng	Đơn giá
+Trần Minh Hải - 83089	389.34	501.97	0.29	30	16.73
+Nguyễn Quỳnh Anh - 98486	367.37	497.44	0.35	22	22.61
+Lê Thị Mỹ Linh - 170266	189.23	241.74	0.28	21	11.51
+Đỗ Nhật Trinh - 183180	186.75	239.64	0.28	15	15.98
+Tạ Đức Hiếu - 189769	170.85	212.43	0.24	9	23.60
+Trần Thị Mỹ Trang - 45500	101.30	141.69	0.40	13	10.90`,
+dtTGDD:`Nhân viên	DTLK	DTQĐ	Hiệu quả QĐ	Số lượng	Đơn giá
+Nguyễn Thị Thy - 29649	101.44	153.69	0.52	33	4.66
+Lê Văn Nhân - 204201	80.76	112.48	0.39	19	5.92
+Lê Thị Thanh Trâm - 269167	37.13	60.64	0.63	37	1.64
+Trần Thị Huyền Trang - 259623	36.00	49.95	0.39	27	1.85`
+};
+const NAV=[['totalComp','📋 Tổng kết toàn diện'],['dashboard','🏠 Dashboard'],['pushTZ','🚀 Push Topzone'],['pushTGDD','🚀 Push TGDĐ'],['rankStore','🏆 Xếp hạng siêu thị'],['storeComp','📊 Thi đua theo siêu thị'],['rankEmp','👥 BXH nhân viên'],['rankEmpFull','📊 BXH NV bảng lớn'],['detailEmp','🧾 Chi tiết nhân viên'],['income','💵 Thu nhập'],['scoreRule','🧮 Quy đổi điểm'],['ai','🤖 AI phân tích'],['import','⚙️ Import dữ liệu']];
+let DATA={},STATE={active:'totalComp',activeDetail:null,dayOverride:null,scopeChain:'all',scopeStore:'all'};
+function norm(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/[^a-z0-9]+/g,' ').trim()}
+function n(v){let s=String(v??'').replace(/%/g,'').replace(/,/g,'').trim(); if(!s)return 0; return parseFloat(s)||0}
+function f(x,d=0){x=Number.isFinite(x)?x:0;return x.toLocaleString('vi-VN',{maximumFractionDigits:d,minimumFractionDigits:d})}
+function p(x,d=0){return f(x,d)+'%'}
+function rows(t){return String(t||'').split(/\r?\n/).map(l=>l.split('\t').map(c=>c.trim())).filter(r=>r.some(c=>c!==''))}
+function shortName(name){let a=String(name||'').trim().split(/\s+/);return a.length>2?a.slice(-2).join(' '):name}
+function cls(v){return v>=100?'green':v>=80?'blue':v>=50?'orange':'red'}
+function pillCls(v){return v>=100?'g':v>=50?'o':'r'}
+function bar(v){return `<div class="progress"><span style="width:${Math.max(0,Math.min(100,v))}%"></span></div>`}
+function raw(){try{return JSON.parse(localStorage.getItem('td_v5_fixed'))||{...DEFAULT}}catch(e){return {...DEFAULT}}}
+function saveRaw(o){localStorage.setItem('td_v5_fixed',JSON.stringify(o))}
+function parsePeople(t){return rows(t).slice(1).map(r=>({id:String(r[0]||'').trim(),name:String(r[1]||'').replace(/^\s+/,'').trim(),chain:String(r[2]||'').trim(),store:String(r[3]||'').trim()})).filter(x=>x.id&&x.name&&x.store)}
+function parseKPI(t,chain){return rows(t).slice(1).map(r=>({chain,item:r[0],current:n(r[1]),gap:n(r[2]),target:n(r[3]),ht:n(r[4]),forecast:n(r[5]),perDay:n(r[6])})).filter(x=>x.item&&x.target>0)}
+function parseStores(t){return rows(t).slice(1).map(r=>({store:r[0],forecast:n(r[1]),dtqtd:n(r[2]),target:n(r[3]),growth:n(r[4])})).filter(x=>x.store)}
+function parseDT(t,people){let ids=new Set(people.map(x=>x.id)), out={}; rows(t).slice(1).forEach(r=>{let m=String(r[0]||'').match(/-\s*(\d+)$/); if(m&&ids.has(m[1]))out[m[1]]={dtlk:n(r[1]),dtqd:n(r[2]),eff:n(r[3]),qty:n(r[4]),price:n(r[5])}}); return out}
+function parseThi(t,people){let rs=rows(t), ids=new Set(people.map(x=>x.id)); let unitIdx=rs.findIndex((r,i)=>i>0&&r.filter(Boolean).length>=2&&r.every(c=>!c||/^(DTLK|SLLK)$/i.test(c))); if(unitIdx<0)return {items:[],units:[],emps:{}}; let items=rs.slice(1,unitIdx).map(r=>r[0]).filter(Boolean); let units=rs[unitIdx].filter(Boolean); let emps={}; rs.slice(unitIdx+1).forEach(r=>{let m=String(r[0]||'').match(/-\s*(\d+)$/); if(!m||!ids.has(m[1]))return; emps[m[1]]={}; items.forEach((it,i)=>emps[m[1]][it]={value:n(r[i+1]),unit:units[i]||''})}); return {items,units,emps}}
+function storeTarget(store,chain){let key=norm(store).split(' ')[0]; let s=DATA.stores.find(x=>norm(x.store).includes(key)||key.includes(norm(x.store).split(' ')[0])); return s?s.target:(chain==='Topzone'?6863:3204)}
+function matchSubject(map,item){if(!map)return null; if(map[item])return map[item]; let ni=norm(item); let key=Object.keys(map).find(k=>norm(k)===ni||norm(k).includes(ni)||ni.includes(norm(k))); return key?map[key]:null}
+function rebuild(){let r=raw(); let people=parsePeople(r.nhansu), kpiTZ=parseKPI(r.kpiTZ,'Topzone'), kpiTGDD=parseKPI(r.kpiTGDD,'TGDĐ'), stores=parseStores(r.store); DATA={raw:r,people,kpiTZ,kpiTGDD,stores}; let thi={Topzone:parseThi(r.thiTZ,people),'TGDĐ':parseThi(r.thiTGDD,people)}; let dt={Topzone:parseDT(r.dtTZ,people),'TGDĐ':parseDT(r.dtTGDD,people)}; let kpi={Topzone:kpiTZ,'TGDĐ':kpiTGDD}; let count={}; people.forEach(p=>count[p.store]=(count[p.store]||0)+1); DATA.count=count; let employees=people.map(p=>{let d=(dt[p.chain]||{})[p.id]||{dtlk:0,dtqd:0,eff:0,qty:0,price:0}; let c=count[p.store]||1; let targetDT=storeTarget(p.store,p.chain)/c; let dtPct=targetDT?d.dtqd/targetDT*100:0; let empMap=(thi[p.chain]?.emps||{})[p.id]||{}; let subjects=(kpi[p.chain]||[]).map(k=>{let rec=matchSubject(empMap,k.item); let actual=rec?rec.value:0; let targetNV=k.target/c*1.3; let empHT=targetNV?actual/targetNV*100:0; return {...k,actual,targetNV,unit:rec?.unit||'',empHT,rank:0,gapNV:Math.max(0,targetNV-actual)}}).filter(s=>s.targetNV>0); let achieved=subjects.filter(s=>s.empHT>=100).length; let effPct=subjects.length?achieved/subjects.length*100:0; let total=dtPct*.5+effPct*.5; let weak=subjects.slice().sort((a,b)=>a.empHT-b.empHT).slice(0,3); let strong=subjects.slice().sort((a,b)=>b.empHT-a.empHT).slice(0,3); return {...p,dt:d,targetDT,dtPct,subjects,achieved,effPct,total,weak,strong}});
+ employees.forEach(e=>e.subjects.forEach(s=>{let group=employees.filter(x=>x.store===e.store).map(x=>({e:x,s:x.subjects.find(y=>norm(y.item)===norm(s.item))})).filter(x=>x.s).sort((a,b)=>b.s.empHT-a.s.empHT); s.rank=group.findIndex(x=>x.e.id===e.id)+1})); employees.sort((a,b)=>b.total-a.total).forEach((e,i)=>e.rank=i+1); DATA.employees=employees; if(!STATE.activeDetail&&employees[0])STATE.activeDetail=employees[0].id}
+function dayInfo(){let [y,m]=document.getElementById('monthSelect').value.split('-').map(Number); let total=new Date(y,m,0).getDate(); let now=new Date(); let auto=(now.getFullYear()===y&&now.getMonth()+1===m)?now.getDate()-1:Math.min(total,1); let d=Math.max(1,Math.min(total,STATE.dayOverride||auto)); return {y,m,total,d,left:total-d,progress:d/total*100}}
+function monthWidget(){let d=dayInfo();return `<div class="card pad"><h3 class="section-title">Tiến độ tháng</h3><div class="monthbar"><div class="mini"><small>Ngày dữ liệu</small><b class="green">${String(d.d).padStart(2,'0')}/${String(d.m).padStart(2,'0')}</b><div><button class="btn" style="padding:5px 8px" onclick="STATE.dayOverride=Math.max(1,dayInfo().d-1);renderAll()">-</button> <button class="btn" style="padding:5px 8px" onclick="STATE.dayOverride=null;renderAll()">Auto</button> <button class="btn" style="padding:5px 8px" onclick="STATE.dayOverride=Math.min(dayInfo().total,dayInfo().d+1);renderAll()">+</button></div></div><div class="mini"><small>Đã qua</small><b>${d.d}</b><span> ngày</span></div><div class="mini"><small>Còn lại</small><b class="blue">${d.left}</b><span> ngày</span></div><div class="mini"><small>Ngày SD</small><b>${d.d}/${d.total}</b>${bar(d.progress)}</div><div class="mini"><small>Mục tiêu</small><b>100%</b></div></div></div>`}
+function renderNav(){document.getElementById('nav').innerHTML=NAV.map(n=>`<button class="${n[0]===STATE.active?'active':''}" onclick="show('${n[0]}')">${n[1]}</button>`).join('')}
+function show(id){STATE.active=id;document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));renderNav(); if(id==='detailEmp')renderDetail()}
+function rankMini(list,title){return `<h3 class="section-title">${title}</h3><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Nhân viên</th><th class="num">Điểm</th><th class="num">DT</th><th class="num">Môn đạt</th><th>Yếu nhất</th></tr></thead><tbody>${list.map(e=>`<tr><td class="rank">${e.rank<=3?['🥇','🥈','🥉'][e.rank-1]:e.rank}</td><td><b>${e.name}</b><br><small class="muted">${e.chain}</small></td><td class="num ${cls(e.total)}"><b>${f(e.total,1)}</b></td><td class="num ${cls(e.dtPct)}">${p(e.dtPct)}</td><td class="num">${e.achieved}/${e.subjects.length}</td><td class="red">${e.weak[0]?.item||'-'}</td></tr>`).join('')}</tbody></table></div>`}
+
+function renderTotalComp(){
+ let agg=getStoreAggregates();
+ let allSubjects=[...new Set(DATA.employees.flatMap(e=>e.subjects.map(s=>s.item)))];
+ let allRows=allSubjects.map(item=>{let list=DATA.employees.flatMap(e=>e.subjects.filter(s=>norm(s.item)===norm(item)));let actual=list.reduce((a,s)=>a+s.actual,0);let target=list.reduce((a,s)=>a+s.targetNV,0);let pct=target?actual/target*100:0;let gap=Math.max(0,target-actual);return {item,actual,target,pct,gap,list}}).filter(x=>x.target>0).sort((a,b)=>a.pct-b.pct);
+ let totalDone=allRows.filter(x=>x.pct>=100).length, totalTarget=allRows.length||1, avgPct=allRows.reduce((a,x)=>a+x.pct,0)/totalTarget;
+ let bestEmp=DATA.employees[0], weakEmp=DATA.employees.slice().sort((a,b)=>a.total-b.total)[0];
+ let bestStore=agg[0], weakStore=agg.slice().sort((a,b)=>a.rate-b.rate)[0];
+ let day=dayInfo();
+ let topRows=DATA.employees.slice().sort((a,b)=>b.total-a.total).map((e,i)=>{let weak=e.weak.map(w=>w.item).slice(0,4).join(', ');return `<tr><td class="rank">${i<3?['🏆','🥈','🥉'][i]:i+1}</td><td><b class="${e.total<60?'red':''}">${e.name}</b><br><small class="muted">ID: ${e.id} • ${shortStoreName(e.store)}</small></td><td class="num"><span class="total-chip ${e.achieved/e.subjects.length>=.5?'good':e.total<60?'bad':'warn'}">${e.achieved}/${e.subjects.length}</span></td><td class="num ${cls(e.total)}"><b>${f(e.total,1)}</b></td><td class="num ${cls(e.dtPct)}"><b>${p(e.dtPct)}</b></td><td class="num ${cls(e.effPct)}">${p(e.effPct)}</td><td class="red"><b>${weak||'-'}</b></td><td>${e.weak[0]?`Tập trung <b>${e.weak[0].item}</b>, còn thiếu ${f(e.weak[0].gapNV,1)}`:'Duy trì tốc độ'}</td></tr>`}).join('');
+ let matrixSubjects=allRows.slice().sort((a,b)=>a.pct-b.pct).slice(0,14);
+ let stores=agg.map(a=>a.store);
+ let matrixHead=stores.map(s=>`<th class="num">${shortStoreName(s)}</th>`).join('');
+ let matrixBody=matrixSubjects.map((r,i)=>{let cells=stores.map(st=>{let emps=DATA.employees.filter(e=>e.store===st);let list=emps.map(e=>e.subjects.find(s=>norm(s.item)===norm(r.item))).filter(Boolean);let a=list.reduce((x,s)=>x+s.actual,0), t=list.reduce((x,s)=>x+s.targetNV,0);let pc=t?a/t*100:0;return t?`<td class="heat ${pc>=100?'good':pc>=50?'mid':'bad'}">${p(pc)}<br><small>TH ${f(a,1)}</small></td>`:`<td class="heat none">-</td>`}).join('');return `<tr><td><b>${i+1}. ${r.item}</b></td><td class="num">${f(r.target,1)}</td><td class="num">${f(r.actual,1)}</td><td class="num ${cls(r.pct)}"><b>${p(r.pct)}</b></td>${cells}</tr>`}).join('');
+ let groups=[
+   {title:'ICT + PHỤ KIỆN', keys:['điện thoại','tablet','android','laptop','camera','realme','vivo','đồng hồ','phụ kiện','loa']},
+   {title:'DỊCH VỤ - SIM - TÀI CHÍNH', keys:['sim','vas','nạp rút','ví trả sau','homecredit','fecredit','bảo hiểm','thẻ tín dụng','vay tiền','cake']}
+ ];
+ let groupHtml=groups.map(g=>{let sub=allRows.filter(r=>g.keys.some(k=>norm(r.item).includes(norm(k)))).sort((a,b)=>a.pct-b.pct); if(!sub.length)return ''; let rows=sub.map((r,i)=>`<tr><td>${i+1}</td><td><b>${r.item}</b></td><td class="num">${f(r.actual,2)}</td><td class="num">${f(r.target,2)}</td><td class="num ${cls(r.pct)}"><b>${p(r.pct)}</b></td><td class="num red">${f(r.gap,1)}</td><td>${bar(r.pct)}</td></tr>`).join('');return `<div class="total-light total-section"><h2>${g.title}</h2><div class="table-wrap"><table><thead><tr><th>STT</th><th>Ngành hàng</th><th class="num">Thực hiện</th><th class="num">Target</th><th class="num">% HT</th><th class="num">Còn thiếu</th><th>Tiến độ</th></tr></thead><tbody>${rows}</tbody></table></div></div>`}).join('');
+ let aiItems=[
+  ['🏆','Siêu thị dẫn đầu', bestStore?`<b>${shortStoreName(bestStore.store)}</b> đang đạt ${f(bestStore.rate,1)}%, ${bestStore.done}/${bestStore.subjects.length} môn về số.`:'Chưa có dữ liệu'],
+  ['⚠️','Siêu thị cần cải thiện', weakStore?`<b>${shortStoreName(weakStore.store)}</b> cần kéo ${weakStore.weakest?.item||'môn yếu'} (${weakStore.weakest?p(weakStore.weakest.pct):''}).`:'Chưa có dữ liệu'],
+  ['👤','Nhân viên cần kèm', weakEmp?`<b>${weakEmp.name}</b> điểm ${f(weakEmp.total,1)}, yếu ${weakEmp.weak.map(w=>w.item).slice(0,3).join(', ')}.`:'Chưa có dữ liệu'],
+  ['🚀','Ưu tiên hôm nay', allRows[0]?`Tập trung kéo <b>${allRows[0].item}</b> vì đang thấp nhất toàn hệ thống (${p(allRows[0].pct)}).`:'Không có môn yếu']
+ ];
+ document.getElementById('totalComp').innerHTML=`<div class="total-hero"><div class="hero-title"><div class="hero-icon">◎</div><div><small>Tổng kết thi đua toàn diện</small><b>Dự kiến về ${totalDone}/${totalTarget} môn</b><span class="muted">Cập nhật lúc ${new Date().toLocaleTimeString('vi-VN')} • Ngày dữ liệu ${String(day.d).padStart(2,'0')}/${String(day.m).padStart(2,'0')}/${day.y}</span></div></div><div><small>Tỷ lệ hoàn thành mục tiêu</small><b>${f(avgPct,1)}%</b><span class="green">Theo môn có target</span></div><div><small>Nhân viên mạnh nhất</small><b>${bestEmp?shortName(bestEmp.name):'-'}</b><span>${bestEmp?f(bestEmp.total,1)+' điểm':''}</span></div><div><small>Nhân viên cần kèm</small><b class="red">${weakEmp?shortName(weakEmp.name):'-'}</b><span>${weakEmp?f(weakEmp.total,1)+' điểm':''}</span></div><div class="ring" style="--v:${Math.min(100,totalDone/totalTarget*100)}%"><span>${totalDone}/${totalTarget}</span></div></div>
+ <div class="total-grid"><div class="total-light"><h2>🏅 Xếp hạng nhân viên - nhìn nhanh ai yếu và yếu môn nào</h2><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Nhân viên</th><th class="num">Môn về</th><th class="num">Điểm</th><th class="num">DT</th><th class="num">Hiệu quả</th><th>Môn cần cải thiện</th><th>Hành động hôm nay</th></tr></thead><tbody>${topRows}</tbody></table></div></div><div class="total-ai-card"><h2>🤖 AI điều hành hôm nay</h2>${aiItems.map(x=>`<div class="total-ai-item"><div class="ico">${x[0]}</div><div><b>${x[1]}</b><p class="muted">${x[2]}</p></div></div>`).join('')}<div class="total-stat-row"><div class="total-stat"><small>Tổng NV</small><b>${DATA.employees.length}</b></div><div class="total-stat"><small>Môn yếu &lt;50%</small><b class="red">${allRows.filter(x=>x.pct<50).length}</b></div><div class="total-stat"><small>Môn mạnh ≥100%</small><b class="green">${totalDone}</b></div><div class="total-stat"><small>Tiến độ tháng</small><b>${f(day.progress,1)}%</b></div></div></div></div>
+ <div class="card pad total-section"><h2 class="total-section-title">Heatmap hiệu quả theo môn và siêu thị</h2><div class="table-wrap"><table class="matrix-table"><thead><tr><th>Môn thi đua</th><th class="num">Target</th><th class="num">TH</th><th class="num">TB</th>${matrixHead}</tr></thead><tbody>${matrixBody}</tbody></table></div><div class="total-small-note">Chỉ hiển thị môn có target. Xanh ≥100%, cam 50-99%, đỏ &lt;50%.</div></div>${groupHtml}`;
+}
+
+function renderDashboard(){let all=[...DATA.kpiTZ,...DATA.kpiTGDD], done=all.filter(x=>x.forecast>=100).length, low=all.filter(x=>x.forecast<50).length; let top=DATA.employees.slice(0,5), bottom=DATA.employees.slice().sort((a,b)=>a.total-b.total).slice(0,5); document.getElementById('dashboard').innerHTML=`${monthWidget()}<div class="grid g5" style="margin-top:14px"><div class="kpi"><small>Tổng NV</small><b>${DATA.employees.length}</b></div><div class="kpi"><small>Tổng môn có target</small><b>${all.length}</b></div><div class="kpi"><small>Môn dự kiến đạt</small><b class="green">${done}</b></div><div class="kpi"><small>Môn dưới 50%</small><b class="red">${low}</b></div><div class="kpi"><small>Điểm TB NV</small><b>${f(DATA.employees.reduce((s,e)=>s+e.total,0)/(DATA.employees.length||1),1)}</b></div></div><div class="grid g3" style="margin-top:14px"><div class="card pad">${rankMini(top,'Top nhân viên')}</div><div class="card pad">${rankMini(bottom,'Nhân viên cần kèm')}</div><div class="card pad"><h3 class="section-title green">AI cảnh báo nhanh</h3>${aiBullets().map(x=>`<p>${x}</p>`).join('')}</div></div><div style="margin-top:14px">${fullRankTable()}</div>`}
+function aiBullets(){let low=DATA.employees.slice().sort((a,b)=>a.total-b.total)[0]; let st=DATA.stores.slice().sort((a,b)=>a.forecast-b.forecast)[0]; return [`🔴 Nhân viên cần hỗ trợ trước: <b>${low?.name||'-'}</b>.`,`🎯 Yếu nhất: <b>${low?.weak.map(w=>w.item).join(', ')||'-'}</b>.`,`🏪 Siêu thị cần theo dõi: <b>${st?.store||'-'}</b> (${f(st?.forecast||0,1)}%).`,`📌 Môn không có target đã tự ẩn khỏi bảng.`]}
+function push(chain){let list=chain==='Topzone'?DATA.kpiTZ:DATA.kpiTGDD; let risk=list.slice().sort((a,b)=>a.forecast-b.forecast).slice(0,4), done=list.filter(x=>x.forecast>=100).length, over80=list.filter(x=>x.forecast>=80).length, low=list.filter(x=>x.forecast<50).length; return `<div class="hero"><h2>⚡ PUSH THI ĐUA ${chain.toUpperCase()}</h2><div class="grid g4"><div class="kpi"><small>Môn có target</small><b>${list.length}</b></div><div class="kpi"><small>Về số</small><b class="green">${done}</b></div><div class="kpi"><small>Trên 80%</small><b class="blue">${over80}</b></div><div class="kpi"><small>Dưới 50%</small><b class="red">${low}</b></div></div><div style="margin-top:12px"><b class="red">Ngành kéo tụt:</b> ${risk.map(x=>`<span class="pill r">${x.item}: ${f(x.forecast,1)}%</span>`).join('')}</div></div><div class="light" style="margin-top:14px"><div class="table-wrap"><table><thead><tr><th>STT</th><th>Ngành hàng</th><th class="num">Hiện tại</th><th class="num">Gap</th><th class="num">Mục tiêu</th><th class="num">% HT</th><th class="num">% Dự kiến</th><th class="num">Cần/ngày</th></tr></thead><tbody>${list.map((x,i)=>`<tr><td>${i+1}</td><td><b>${x.item}</b></td><td class="num">${f(x.current,2)}</td><td class="num red">${f(x.gap,0)}</td><td class="num">${f(x.target,2)}</td><td class="num">${p(x.ht)}</td><td class="num ${cls(x.forecast)}"><b>${p(x.forecast)}</b></td><td class="num blue"><b>${f(x.perDay,1)}</b></td></tr>`).join('')}</tbody></table></div></div>`}
+
+function shortStoreName(s){let x=(s||'').split('-')[0].trim();return x||s}
+function getStoreAggregates(){let stores=[...new Set(DATA.employees.map(e=>e.store))];return stores.map(store=>{let emps=DATA.employees.filter(e=>e.store===store);let subjNames=[...new Set(emps.flatMap(e=>e.subjects.map(s=>s.item)))];let subjects=subjNames.map(name=>{let list=emps.map(e=>e.subjects.find(s=>norm(s.item)===norm(name))).filter(Boolean);let actual=list.reduce((a,s)=>a+s.actual,0);let target=list.reduce((a,s)=>a+s.targetNV,0);let pct=target?actual/target*100:0;let chain=list[0]?.chain||emps[0]?.chain||'';let forecast=list[0]?.forecast||0;let perDay=list[0]?.perDay||0;return {item:name,actual,target,pct,forecast,perDay}}).filter(x=>x.target>0);let done=subjects.filter(s=>s.pct>=100).length;let over80=subjects.filter(s=>s.pct>=80).length;let low50=subjects.filter(s=>s.pct<50).length;let rate=subjects.length?done/subjects.length*100:0;let avg=subjects.length?subjects.reduce((a,s)=>a+s.pct,0)/subjects.length:0;let strongest=subjects.slice().sort((a,b)=>b.pct-a.pct)[0];let weakest=subjects.slice().sort((a,b)=>a.pct-b.pct)[0];let avgEmp=emps.length?emps.reduce((a,e)=>a+e.total,0)/emps.length:0;let chain=emps[0]?.chain||'';return {store,chain,emps,subjects,done,over80,low50,rate,avg,strongest,weakest,avgEmp}}).sort((a,b)=>b.rate-a.rate||b.avg-a.avg)}
+function hmClass(v){return v>=100?'hm-good':v>=50?'hm-mid':v>0?'hm-bad':'hm-none'}
+function renderStoreComp(){let agg=getStoreAggregates();let totalSubjects=agg.reduce((a,s)=>a+s.subjects.length,0)||1;let totalDone=agg.reduce((a,s)=>a+s.done,0);let avgRate=agg.length?agg.reduce((a,s)=>a+s.rate,0)/agg.length:0;let storeOver50=agg.filter(s=>s.rate>=50).length;let storeUnder20=agg.filter(s=>s.rate<20).length;let allSubjects=[...new Set(agg.flatMap(s=>s.subjects.map(x=>x.item)))];let systemRows=allSubjects.map(item=>{let cells=agg.map(st=>st.subjects.find(s=>norm(s.item)===norm(item)));let vals=cells.filter(Boolean).map(x=>x.pct);let avg=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0;return {item,cells,avg}}).sort((a,b)=>b.avg-a.avg);let best=agg[0];let need=agg.slice().sort((a,b)=>a.rate-b.rate)[0];let weakSubject=systemRows.slice().sort((a,b)=>a.avg-b.avg)[0];let rankRows=agg.map((s,i)=>`<tr><td class="rank">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td><td><span class="store-name-short">${shortStoreName(s.store)}</span><br><small class="muted">${s.store}</small></td><td class="num">${s.emps.length}</td><td class="num ${cls(s.rate)}"><b>${p(s.rate)}</b><br>${bar(s.rate)}</td><td class="num"><b>${s.done}/${s.subjects.length}</b></td><td>${s.strongest?`<b>${s.strongest.item}</b><br><span class="green">${p(s.strongest.pct)}</span>`:'-'}</td><td>${s.weakest?`<b>${s.weakest.item}</b><br><span class="red">${p(s.weakest.pct)}</span>`:'-'}</td><td class="num"><b>${f(s.avgEmp,1)}</b></td></tr>`).join('');let heatHead=agg.map(s=>`<th class="num">${shortStoreName(s.store)}</th>`).join('');let heatRows=systemRows.map((r,i)=>`<tr><td>${i+1}</td><td><b>${r.item}</b></td><td class="num">100%</td>${r.cells.map(c=>c?`<td class="hm-cell ${hmClass(c.pct)}">${p(c.pct)}</td>`:`<td class="hm-cell hm-none">-</td>`).join('')}<td class="hm-cell ${hmClass(r.avg)}">${p(r.avg)}</td></tr>`).join('');document.getElementById('storeComp').innerHTML=`<div class="store-hero"><div class="main-kpi"><div class="target-icon">◎</div><div><small>Hiệu quả thi đua toàn hệ thống</small><b>Dự kiến về ${totalDone}/${totalSubjects} môn</b><span class="muted">Cập nhật theo dữ liệu import hiện tại</span></div></div><div><small>Tỷ lệ hoàn thành TB</small><b>${f(avgRate,1)}%</b></div><div><small>Siêu thị ≥ 50%</small><b>${storeOver50}/${agg.length}</b></div><div><small>Siêu thị dưới 20%</small><b>${storeUnder20}/${agg.length}</b></div><div class="ring" style="--v:${Math.min(100,totalDone/totalSubjects*100)}%"><span>${totalDone}/${totalSubjects}</span></div></div><div class="card pad" style="margin-top:14px"><h2>📊 Xếp hạng siêu thị (tổng hợp môn có target)</h2><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Siêu thị</th><th class="num">Tổng NV</th><th class="num">Tỷ lệ hoàn thành</th><th class="num">Dự kiến về</th><th>Môn mạnh nhất</th><th>Môn yếu nhất</th><th class="num">Điểm TB NV</th></tr></thead><tbody>${rankRows}</tbody></table></div></div><div class="store-insights"><div class="card pad"><h2>🔥 Hiệu quả theo từng môn thi đua (Heatmap theo siêu thị)</h2><div class="table-wrap"><table><thead><tr><th>STT</th><th>Môn thi đua</th><th class="num">Mục tiêu</th>${heatHead}<th class="num">TB toàn hệ thống</th></tr></thead><tbody>${heatRows}</tbody></table></div><div class="tbl-note">Ghi chú: Xanh ≥100%, Vàng/Cam 50–99%, Đỏ &lt;50%, dấu “-” là siêu thị không có target/môn đó.</div></div><div class="card pad"><h2>🤖 Tổng quan nhanh</h2><div class="quick-card"><small class="muted">Siêu thị dẫn đầu</small><b class="green">${best?shortStoreName(best.store):'-'}</b><span>${best?`${f(best.rate,1)}% • ${best.done}/${best.subjects.length} môn`:''}</span></div><div class="quick-card"><small class="muted">Siêu thị cần cải thiện</small><b class="red">${need?shortStoreName(need.store):'-'}</b><span>${need?`${f(need.rate,1)}% • yếu nhất: ${need.weakest?.item||'-'}`:''}</span></div><div class="quick-card"><small class="muted">Môn yếu nhất toàn hệ thống</small><b class="red">${weakSubject?weakSubject.item:'-'}</b><span>${weakSubject?p(weakSubject.avg):''}</span></div><div class="quick-card"><small class="muted">Hành động hôm nay</small><p>${need&&need.weakest?`Ưu tiên kéo <b>${need.weakest.item}</b> tại <b>${shortStoreName(need.store)}</b>.`: 'Dữ liệu chưa đủ để phân tích.'}</p></div></div></div>`}
+
+function renderStore(){let body=DATA.stores.slice().sort((a,b)=>b.forecast-a.forecast).map((s,i)=>`<tr><td class="rank">${i===0?'🥇':i===1?'🥈':i+1}</td><td><b>${s.store}</b></td><td class="num ${cls(s.forecast)}"><b>${f(s.forecast,1)}%</b></td><td class="num">${f(s.dtqtd,0)}</td><td class="num">${f(s.target,0)}</td><td class="num ${s.growth>=0?'green':'red'}">${f(s.growth,1)}%</td><td>${s.forecast>=100?'<span class="pill g">Đạt</span>':'<span class="pill o">Cần kéo</span>'}</td></tr>`).join(''); document.getElementById('rankStore').innerHTML=`<div class="card pad"><h2>🏆 Xếp hạng thi đua siêu thị</h2><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Siêu thị</th><th class="num">% HT dự kiến</th><th class="num">DTQĐ</th><th class="num">Target</th><th class="num">+/- DTCK</th><th>Trạng thái</th></tr></thead><tbody>${body}</tbody></table></div></div>`}
+function renderRankEmp(){let grouped={};DATA.employees.forEach(e=>(grouped[e.store]=grouped[e.store]||[]).push(e)); document.getElementById('rankEmp').innerHTML=Object.entries(grouped).map(([store,list])=>`<div class="card pad" style="margin-bottom:14px"><h2>👥 BXH nhân viên - ${store}</h2><div class="grid g2">${list.sort((a,b)=>b.total-a.total).map(e=>`<div class="employee-card"><div class="emp-head"><div><h3>${e.rank<=3?['🥇','🥈','🥉'][e.rank-1]:'#'+e.rank} ${e.name}</h3><div class="muted">${e.id} • ${e.chain}</div></div><div class="avatar">${f(e.total,0)}</div></div><div class="grid g4" style="margin-top:12px"><div><small>DT</small><b class="${cls(e.dtPct)}">${p(e.dtPct)}</b></div><div><small>Hiệu quả</small><b>${p(e.effPct)}</b></div><div><small>Môn đạt</small><b>${e.achieved}/${e.subjects.length}</b></div><div><small>Yếu nhất</small><b class="red">${e.weak[0]?.item||'-'}</b></div></div>${bar(e.total)}<p><b>Mất điểm vì:</b> ${e.weak.map(w=>`<span class="pill ${pillCls(w.empHT)}">${w.item}: ${p(w.empHT)}</span>`).join('')}</p><button class="btn blue" onclick="STATE.activeDetail='${e.id}';show('detailEmp')">Xem chi tiết</button></div>`).join('')}</div></div>`).join('')}
+function fullRankTable(){let subjects=[...new Set(DATA.employees.flatMap(e=>e.subjects.map(s=>s.item)))].slice(0,16); return `<div class="card pad"><h2>📊 BXH nhân viên bảng lớn</h2><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Nhân viên</th><th class="num">Điểm</th><th class="num">DT</th><th class="num">HQ</th><th class="num">Đạt</th>${subjects.map(s=>`<th class="num">${s.split(' ').slice(0,3).join(' ')}</th>`).join('')}<th>Yếu môn</th></tr></thead><tbody>${DATA.employees.map(e=>`<tr><td class="rank">${e.rank}</td><td><b>${e.name}</b><br><small>${e.store}</small></td><td class="num ${cls(e.total)}"><b>${f(e.total,1)}</b></td><td class="num ${cls(e.dtPct)}">${p(e.dtPct)}</td><td class="num">${p(e.effPct)}</td><td class="num">${e.achieved}/${e.subjects.length}</td>${subjects.map(sub=>{let s=e.subjects.find(x=>x.item===sub); if(!s)return '<td class="heat none">-</td>'; let c=s.empHT>=100?'good':s.empHT>=50?'mid':'bad'; return `<td class="heat ${c}">${p(s.empHT)}<br><small>#${s.rank}</small></td>`}).join('')}<td class="red">${e.weak.map(w=>w.item.split(' ')[0]).join(', ')}</td></tr>`).join('')}</tbody></table></div></div>`}
+function renderFull(){document.getElementById('rankEmpFull').innerHTML=fullRankTable()}
+function renderDetail(){let e=DATA.employees.find(x=>x.id===STATE.activeDetail)||DATA.employees[0]; if(!e)return; let tabs=DATA.employees.map(x=>`<button class="${x.id===e.id?'active':''}" onclick="STATE.activeDetail='${x.id}';renderDetail()">${shortName(x.name)}</button>`).join(''); let rows=e.subjects.slice().sort((a,b)=>b.empHT-a.empHT).map(s=>`<tr><td class="rank">#${s.rank}</td><td><b>${s.item}</b><br><small class="muted">${s.unit}</small></td><td class="num">${f(s.actual,2)}</td><td class="num">${f(s.targetNV,2)}</td><td class="num ${cls(s.empHT)}"><b>${p(s.empHT)}</b></td><td class="num ${cls(s.forecast)}">${p(s.forecast)}</td><td class="num red">${f(s.gapNV,2)}</td><td>${bar(s.empHT)}</td></tr>`).join(''); document.getElementById('detailEmp').innerHTML=`<div class="tabs-inline no-print">${tabs}</div><div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px"><button class="btn primary" onclick="exportCurrentEmployeeDetail()">📸 Xuất ảnh nhân viên này</button><button class="btn blue" onclick="exportAllEmployeeDetails()">📸 Xuất ảnh TẤT CẢ nhân viên</button><button class="btn" onclick="exportEmployeeDetailsByFilter('weak')">🔴 Xuất NV dưới 70 điểm</button><button class="btn" onclick="exportEmployeeDetailsByFilter('Topzone')">Topzone</button><button class="btn" onclick="exportEmployeeDetailsByFilter('TGDĐ')">TGDĐ</button></div><div class="card pad" id="employeeDetailCard"><h2>🧾 Chi tiết nhân viên: ${e.name} - ${e.id}</h2><div class="grid g5"><div class="kpi"><small>Điểm</small><b class="${cls(e.total)}">${f(e.total,1)}</b></div><div class="kpi"><small>Hạng tổng</small><b>#${e.rank}</b></div><div class="kpi"><small>DT dự kiến</small><b>${p(e.dtPct)}</b></div><div class="kpi"><small>Hiệu quả</small><b>${p(e.effPct)}</b></div><div class="kpi"><small>Môn đạt</small><b>${e.achieved}/${e.subjects.length}</b></div></div><h3 class="section-title" style="margin-top:16px">Môn thi đua - sắp xếp theo % hoàn thành cao xuống thấp</h3><div class="table-wrap"><table><thead><tr><th>Thứ hạng</th><th>Môn thi đua</th><th class="num">Thực hiện</th><th class="num">Target NV</th><th class="num">% hoàn thành</th><th class="num">% dự kiến ST</th><th class="num">Còn lại</th><th>Tiến độ</th></tr></thead><tbody>${rows}</tbody></table></div></div>`}
+function renderIncome(){document.getElementById('income').innerHTML=`<div class="card pad"><h2>💵 Thu nhập tham khảo</h2><div class="table-wrap"><table><thead><tr><th>Nhân viên</th><th>Siêu thị</th><th class="num">Điểm</th><th class="num">Thưởng dự kiến</th><th>Ghi chú</th></tr></thead><tbody>${DATA.employees.map(e=>`<tr><td><b>${e.name}</b></td><td>${e.store}</td><td class="num">${f(e.total,1)}</td><td class="num red"><b>${f(Math.max(0,e.total)*100000,0)}</b></td><td class="muted">Tab này tách riêng khỏi thi đua.</td></tr>`).join('')}</tbody></table></div></div>`}
+function renderRule(){document.getElementById('scoreRule').innerHTML=`<div class="card pad"><h2>🧮 Quy đổi điểm</h2><div class="grid g3"><div class="kpi"><small>Doanh thu</small><b>DT / Target × 100</b><p class="muted">Target DT NV = Target siêu thị / số nhân sự.</p></div><div class="kpi"><small>Hiệu quả</small><b>Môn đạt / Tổng môn</b><p class="muted">Quy về thang 100.</p></div><div class="kpi"><small>Tổng điểm</small><b>50% DT + 50% HQ</b></div></div></div>`}
+function renderAI(){document.getElementById('ai').innerHTML=`<div class="card pad"><h2>🤖 AI phân tích</h2><div class="grid g2">${DATA.employees.slice().sort((a,b)=>a.total-b.total).map(e=>`<div class="employee-card"><h3 class="${e.total<60?'red':'orange'}">${e.name}</h3><p>Điểm <b>${f(e.total,1)}</b> | DT <b>${p(e.dtPct)}</b> | Hiệu quả <b>${p(e.effPct)}</b></p><p><b>Yếu môn:</b> ${e.weak.map(w=>`<span class="pill ${pillCls(w.empHT)}">${w.item} ${p(w.empHT)}</span>`).join('')}</p><p><b>Hành động:</b> hôm nay ưu tiên ${e.weak.slice(0,2).map(w=>w.item).join(' và ')}.</p></div>`).join('')}</div></div>`}
+function renderImport(){let r=raw(); let fields=[['nhansu','Nhân sự'],['store','Tỉ lệ hoàn thành siêu thị'],['kpiTZ','KPI/PUSH Topzone'],['kpiTGDD','KPI/PUSH TGDĐ'],['thiTZ','Thi đua Topzone'],['thiTGDD','Thi đua TGDĐ'],['dtTZ','Doanh thu Topzone'],['dtTGDD','Doanh thu TGDĐ']];
+ const quickLinks={
+  store:[['Mở BI tỉ lệ HT siêu thị','https://bi.thegioididong.com/khoi-ban-hang-sub?id=84397&tab=bcdtst&rt=2&dm=1']],
+  kpiTZ:[['Mở KPI/PUSH TGDĐ Topzone','https://aistudio.google.com/apps/1dcd2661-02ce-4fa7-89cb-37904299ddd5?showPreview=true&showAssistant=true&fullscreenApplet=true']],
+  kpiTGDD:[['Mở KPI/PUSH TGDĐ Topzone','https://aistudio.google.com/apps/1dcd2661-02ce-4fa7-89cb-37904299ddd5?showPreview=true&showAssistant=true&fullscreenApplet=true']],
+  thiTZ:[['Mở BI thi đua/doanh thu Topzone','https://bi.thegioididong.com/sieu-thi-con?id=88311&tab=bcdtnv&rt=2&dm=1']],
+  dtTZ:[['Mở BI thi đua/doanh thu Topzone','https://bi.thegioididong.com/sieu-thi-con?id=88311&tab=bcdtnv&rt=2&dm=1']],
+  thiTGDD:[['Mở BI thi đua TGDĐ','https://bi.thegioididong.com/sieu-thi-con?id=88325&tab=bcdtnv&rt=2&dm=1']],
+  dtTGDD:[['Mở BI thi đua/doanh thu TGDĐ','https://bi.thegioididong.com/sieu-thi-con?id=88325&tab=bcdtnv&rt=2&dm=1']]
+ };
+ const linkHtml=k=>(quickLinks[k]||[]).map(([t,u])=>`<a class="quick-link" href="${u}" target="_blank" rel="noopener">🔗 ${t}</a>`).join('');
+ document.getElementById('import').innerHTML=`<div class="card pad"><h2>⚙️ Import dữ liệu</h2><p class="muted">Dán data vào ô cần cập nhật, bấm <b>Lưu & chạy lại</b>. Các nút link mở nhanh nguồn BI/AI Studio để bạn copy dữ liệu.</p><div class="quick-panel"><a class="quick-main" href="https://bi.thegioididong.com/khoi-ban-hang-sub?id=84397&tab=bcdtst&rt=2&dm=1" target="_blank" rel="noopener">📊 Tỉ lệ HT siêu thị</a><a class="quick-main" href="https://aistudio.google.com/apps/1dcd2661-02ce-4fa7-89cb-37904299ddd5?showPreview=true&showAssistant=true&fullscreenApplet=true" target="_blank" rel="noopener">🚀 KPI/PUSH TGDĐ Topzone</a><a class="quick-main" href="https://bi.thegioididong.com/sieu-thi-con?id=88311&tab=bcdtnv&rt=2&dm=1" target="_blank" rel="noopener">🏪 BI Topzone</a><a class="quick-main" href="https://bi.thegioididong.com/sieu-thi-con?id=88325&tab=bcdtnv&rt=2&dm=1" target="_blank" rel="noopener">📱 BI TGDĐ</a></div><div class="input-grid">${fields.map(([k,l])=>`<div class="inputbox"><label><span>${l}</span><span class="ok">✓ ${rows(r[k]).length} dòng</span></label><div class="source-links">${linkHtml(k)}</div><textarea id="inp_${k}">${r[k]||''}</textarea></div>`).join('')}</div><div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" onclick="saveImport()">Lưu & chạy lại</button><button class="btn blue" onclick="renderAll();toast('Đã tính lại')">Tính lại</button><button class="btn red" onclick="localStorage.removeItem('td_v5_fixed');location.reload()">Reset data mẫu</button></div></div>`}
+function saveImport(){let r={}; document.querySelectorAll('[id^="inp_"]').forEach(t=>r[t.id.replace('inp_','')]=t.value); saveRaw(r); renderAll(); show('dashboard'); toast('Đã lưu và chạy lại dữ liệu')}
+async function exportOneScreen(id){show(id);await new Promise(r=>setTimeout(r,250));let el=document.getElementById(id);if(window.html2canvas){let c=await html2canvas(el,{backgroundColor:'#07111f',scale:2});let a=document.createElement('a');a.download=`${id}_${Date.now()}.png`;a.href=c.toDataURL('image/png');a.click();toast('Đã xuất ảnh')}else{window.print()}}
+
+function renderAll(){rebuild(); renderNav(); renderTotalComp(); renderDashboard(); document.getElementById('pushTZ').innerHTML=push('Topzone'); document.getElementById('pushTGDD').innerHTML=push('TGDĐ'); renderStore(); renderStoreComp(); renderRankEmp(); renderFull(); renderDetail(); renderIncome(); renderRule(); renderAI(); renderImport()}
+
+function safeFileName(s){return (s||'file').toString().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-zA-Z0-9_-]+/g,'_').replace(/^_+|_+$/g,'').slice(0,90)}
+async function downloadElementAsPng(el,filename){if(!window.html2canvas){window.print();return}let c=await html2canvas(el,{backgroundColor:'#07111f',scale:2,useCORS:true});let a=document.createElement('a');a.download=filename;a.href=c.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove();await new Promise(r=>setTimeout(r,350))}
+async function exportCurrentEmployeeDetail(){show('detailEmp');await new Promise(r=>setTimeout(r,150));let e=DATA.employees.find(x=>x.id===STATE.activeDetail)||DATA.employees[0];let el=document.getElementById('employeeDetailCard')||document.getElementById('detailEmp');await downloadElementAsPng(el,`Chi_tiet_${String(e.rank).padStart(2,'0')}_${safeFileName(e.name)}_${e.id}.png`);toast('Đã xuất ảnh nhân viên đang chọn')}
+async function exportEmployeeList(list,label='tat_ca'){if(!list.length){toast('Không có nhân viên phù hợp để xuất');return}show('detailEmp');toast(`Đang xuất ${list.length} nhân viên...`);for(let i=0;i<list.length;i++){let e=list[i];STATE.activeDetail=e.id;renderDetail();await new Promise(r=>setTimeout(r,220));let el=document.getElementById('employeeDetailCard')||document.getElementById('detailEmp');let store=safeFileName((e.store||'').split('-')[0]||e.chain);await downloadElementAsPng(el,`${String(i+1).padStart(2,'0')}_${store}_${safeFileName(e.name)}_${e.id}.png`)}toast(`Đã xuất xong ${list.length} ảnh nhân viên`)}
+async function exportAllEmployeeDetails(){await exportEmployeeList(DATA.employees.slice().sort((a,b)=>a.rank-b.rank),'all')}
+async function exportEmployeeDetailsByFilter(type){let list=DATA.employees.slice();if(type==='weak')list=list.filter(e=>e.total<70).sort((a,b)=>a.total-b.total);else list=list.filter(e=>e.chain===type).sort((a,b)=>a.rank-b.rank);await exportEmployeeList(list,type)}
+
+function openExport(){document.getElementById('exportChecks').innerHTML=NAV.filter(x=>x[0]!=='import').map(x=>`<label><input type="checkbox" value="${x[0]}" checked> ${x[1]}</label>`).join('');document.getElementById('exportModal').classList.add('show')}
+function closeExport(){document.getElementById('exportModal').classList.remove('show')}function selectExport(v){document.querySelectorAll('#exportChecks input').forEach(i=>i.checked=v)}
+async function exportSelected(){let ids=[...document.querySelectorAll('#exportChecks input:checked')].map(i=>i.value);closeExport();for(let id of ids){show(id);await new Promise(r=>setTimeout(r,250));let el=document.getElementById(id);if(window.html2canvas){let c=await html2canvas(el,{backgroundColor:'#07111f',scale:2});let a=document.createElement('a');a.download=`${id}_${Date.now()}.png`;a.href=c.toDataURL('image/png');a.click()}else{window.print();break}}toast('Đã xuất ảnh')}
+function toast(t){let el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2500)}
+
+
+/* ================= V6 PRO COMPLETION PATCH =================
+   - Bộ lọc chuỗi/siêu thị dùng cho các tab có môn thi đua & BXH.
+   - Môn đạt -> Môn đạt dự kiến.
+   - Điểm, DT, hiệu quả dùng dự kiến theo ngày dữ liệu.
+   - Chi tiết NV có % hoàn thành, % dự kiến và hạng môn; sắp theo % dự kiến cao xuống thấp.
+============================================================ */
+function scopeChain(){return document.getElementById('chainFilter')?.value || STATE.scopeChain || 'all'}
+function scopeStore(){return document.getElementById('storeFilter')?.value || STATE.scopeStore || 'all'}
+function scopeText(){let c=scopeChain(),s=scopeStore();return `${c==='all'?'Tất cả chuỗi':c} • ${s==='all'?'Tất cả siêu thị':shortStoreName(s)}`}
+function employeesScoped(){let c=scopeChain(),s=scopeStore();return (DATA.employees||[]).filter(e=>(c==='all'||e.chain===c)&&(s==='all'||e.store===s))}
+function kpisScoped(){let c=scopeChain();let arr=[];if(c==='all'||c==='Topzone')arr=arr.concat(DATA.kpiTZ||[]);if(c==='all'||c==='TGDĐ')arr=arr.concat(DATA.kpiTGDD||[]);return arr}
+function updateScopeOptions(){
+  let cf=document.getElementById('chainFilter'), sf=document.getElementById('storeFilter'); if(!cf||!sf||!DATA.people)return;
+  if(STATE.scopeChain) cf.value=STATE.scopeChain; let c=cf.value; STATE.scopeChain=c;
+  let stores=[...new Set(DATA.people.filter(p=>c==='all'||p.chain===c).map(p=>p.store))].sort();
+  let keep=STATE.scopeStore||sf.value||'all'; if(keep!=='all'&&!stores.includes(keep)) keep='all'; STATE.scopeStore=keep;
+  sf.innerHTML='<option value="all">Tất cả siêu thị</option>'+stores.map(s=>`<option value="${s.replace(/"/g,'&quot;')}">${shortStoreName(s)}</option>`).join(''); sf.value=keep;
+}
+function projectPct(currentPct){let d=dayInfo();let dp=Math.max(0.01,d.d/d.total);return currentPct/dp}
+
+function rebuild(){
+ let r=raw(); let people=parsePeople(r.nhansu), kpiTZ=parseKPI(r.kpiTZ,'Topzone'), kpiTGDD=parseKPI(r.kpiTGDD,'TGDĐ'), stores=parseStores(r.store);
+ DATA={raw:r,people,kpiTZ,kpiTGDD,stores};
+ let thi={Topzone:parseThi(r.thiTZ,people),'TGDĐ':parseThi(r.thiTGDD,people)}; let dt={Topzone:parseDT(r.dtTZ,people),'TGDĐ':parseDT(r.dtTGDD,people)}; let kpi={Topzone:kpiTZ,'TGDĐ':kpiTGDD};
+ let count={}; people.forEach(p=>count[p.store]=(count[p.store]||0)+1); DATA.count=count;
+ let employees=people.map(p=>{
+  let d=(dt[p.chain]||{})[p.id]||{dtlk:0,dtqd:0,eff:0,qty:0,price:0}; let c=count[p.store]||1; let targetDT=storeTarget(p.store,p.chain)/c;
+  let dtPct=targetDT?d.dtqd/targetDT*100:0; let dtForecast=projectPct(dtPct);
+  let empMap=(thi[p.chain]?.emps||{})[p.id]||{};
+  let subjects=(kpi[p.chain]||[]).map(k=>{let rec=matchSubject(empMap,k.item); let actual=rec?rec.value:0; let targetNV=k.target/c*1.3; let empHT=targetNV?actual/targetNV*100:0; let forecastEmp=projectPct(empHT); return {...k,actual,targetNV,unit:rec?.unit||'',empHT,forecastEmp,rank:0,gapNV:Math.max(0,targetNV-actual)}}).filter(s=>s.targetNV>0);
+  let achievedNow=subjects.filter(s=>s.empHT>=100).length; let achievedProjected=subjects.filter(s=>s.forecastEmp>=100).length; let effPct=subjects.length?achievedProjected/subjects.length*100:0;
+  let total=dtForecast*.5+effPct*.5; let weak=subjects.slice().sort((a,b)=>a.forecastEmp-b.forecastEmp).slice(0,3); let strong=subjects.slice().sort((a,b)=>b.forecastEmp-a.forecastEmp).slice(0,3);
+  return {...p,dt:d,targetDT,dtPct,dtForecast,subjects,achievedNow,achievedProjected,achieved:achievedProjected,effPct,total,weak,strong};
+ });
+ employees.forEach(e=>e.subjects.forEach(s=>{let group=employees.filter(x=>x.store===e.store).map(x=>({e:x,s:x.subjects.find(y=>norm(y.item)===norm(s.item))})).filter(x=>x.s).sort((a,b)=>b.s.forecastEmp-a.s.forecastEmp); s.rank=group.findIndex(x=>x.e.id===e.id)+1}));
+ employees.sort((a,b)=>b.total-a.total).forEach((e,i)=>e.rank=i+1); DATA.employees=employees; if(!STATE.activeDetail&&employees[0])STATE.activeDetail=employees[0].id;
+}
+
+function rankMini(list,title){return `<h3 class="section-title">${title}</h3><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Nhân viên</th><th class="num">Điểm</th><th class="num">DT dự kiến</th><th class="num">Môn đạt dự kiến</th><th>Yếu nhất</th></tr></thead><tbody>${list.map(e=>`<tr><td class="rank">${e.rank<=3?['🥇','🥈','🥉'][e.rank-1]:e.rank}</td><td><b>${e.name}</b><br><small class="muted">${e.chain} • ${shortStoreName(e.store)}</small></td><td class="num ${cls(e.total)}"><b>${f(e.total,1)}</b></td><td class="num ${cls(e.dtForecast)}">${p(e.dtForecast)}</td><td class="num">${e.achievedProjected}/${e.subjects.length}</td><td class="red">${e.weak[0]?.item||'-'}</td></tr>`).join('')}</tbody></table></div>`}
+
+function renderDashboard(){let emps=employeesScoped();let top=emps.slice().sort((a,b)=>b.total-a.total).slice(0,6);let weak=emps.slice().sort((a,b)=>a.total-b.total).slice(0,5);let allK=kpisScoped();let target=allK.length||1,over80=allK.filter(x=>x.forecast>=80).length,low=allK.filter(x=>x.forecast<50).length;document.getElementById('dashboard').innerHTML=`<div class="card pad"><h2>🏠 Dashboard • ${scopeText()}</h2></div><div class="grid g2" style="margin-top:14px">${monthWidget()}<div class="card pad"><h3 class="section-title">Tổng quan</h3><div class="grid g5"><div class="kpi"><small>Nhân viên</small><b>${emps.length}</b></div><div class="kpi"><small>Môn có target</small><b>${target}</b></div><div class="kpi"><small>Môn >80%</small><b class="green">${over80}</b></div><div class="kpi"><small>Môn <50%</small><b class="red">${low}</b></div><div class="kpi"><small>Tỷ lệ môn dự kiến</small><b>${p(over80/target*100,1)}</b></div></div></div></div><div class="grid g3" style="margin-top:14px"><div class="card pad">${rankMini(top,'TOP nhân viên')}</div><div class="card pad">${rankMini(weak,'Nhân viên cần hỗ trợ')}</div><div class="card pad"><h3 class="section-title green">AI cảnh báo</h3>${aiBulletsScoped(emps).map(x=>`<p>${x}</p>`).join('')}</div></div><div style="margin-top:14px">${fullRankTable()}</div>`}
+function aiBulletsScoped(emps){if(!emps.length)return ['Chưa có dữ liệu theo bộ lọc hiện tại.'];let w=emps.slice().sort((a,b)=>a.total-b.total)[0];let allWeak=emps.flatMap(e=>e.weak.map(x=>x.item));let topWeak=[...new Set(allWeak)].slice(0,4);return [`🔴 Cần kèm trước: <b>${w.name}</b> (${f(w.total,1)} điểm).`,`⚠️ Môn cần coaching nhiều: <b>${topWeak.join(', ')||'-'}</b>.`,`📌 Đang xem phạm vi: <b>${scopeText()}</b>.`,`✅ Môn đạt dự kiến được tính theo % dự kiến đến cuối tháng, không phải chỉ số hiện tại.`]}
+
+function getStoreAggregates(){let emps=employeesScoped();let grouped={};emps.forEach(e=>(grouped[e.store]=grouped[e.store]||[]).push(e));return Object.entries(grouped).map(([store,emps])=>{let chain=emps[0]?.chain||'';let subjects=[...new Set(emps.flatMap(e=>e.subjects.map(s=>s.item)))].map(item=>{let list=emps.flatMap(e=>e.subjects.filter(s=>norm(s.item)===norm(item)));let actual=list.reduce((a,s)=>a+s.actual,0);let target=list.reduce((a,s)=>a+s.targetNV,0);let pct=target?actual/target*100:0;let forecast=projectPct(pct);return {item,actual,target,pct,forecast}}).filter(s=>s.target>0);let done=subjects.filter(s=>s.forecast>=100).length;let over80=subjects.filter(s=>s.forecast>=80).length;let low50=subjects.filter(s=>s.forecast<50).length;let rate=subjects.length?done/subjects.length*100:0;let avg=subjects.length?subjects.reduce((a,s)=>a+s.forecast,0)/subjects.length:0;let strongest=subjects.slice().sort((a,b)=>b.forecast-a.forecast)[0];let weakest=subjects.slice().sort((a,b)=>a.forecast-b.forecast)[0];let avgEmp=emps.length?emps.reduce((a,e)=>a+e.total,0)/emps.length:0;return {store,chain,emps,subjects,done,over80,low50,rate,avg,strongest,weakest,avgEmp}}).sort((a,b)=>b.rate-a.rate||b.avg-a.avg)}
+
+function renderStoreComp(){let agg=getStoreAggregates();let totalSubjects=agg.reduce((a,s)=>a+s.subjects.length,0)||1;let totalDone=agg.reduce((a,s)=>a+s.done,0);let avgRate=agg.length?agg.reduce((a,s)=>a+s.rate,0)/agg.length:0;let storeOver50=agg.filter(s=>s.rate>=50).length;let storeUnder20=agg.filter(s=>s.rate<20).length;let allSubjects=[...new Set(agg.flatMap(s=>s.subjects.map(x=>x.item)))];let systemRows=allSubjects.map(item=>{let cells=agg.map(st=>st.subjects.find(s=>norm(s.item)===norm(item)));let vals=cells.filter(Boolean).map(x=>x.forecast);let avg=vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:0;return {item,cells,avg}}).sort((a,b)=>b.avg-a.avg);let best=agg[0];let need=agg.slice().sort((a,b)=>a.rate-b.rate)[0];let weakSubject=systemRows.slice().sort((a,b)=>a.avg-b.avg)[0];let rankRows=agg.map((s,i)=>`<tr><td class="rank">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td><td><span class="store-name-short">${shortStoreName(s.store)}</span><br><small class="muted">${s.store}</small></td><td class="num">${s.emps.length}</td><td class="num ${cls(s.rate)}"><b>${p(s.rate)}</b><br>${bar(s.rate)}</td><td class="num"><b>${s.done}/${s.subjects.length}</b></td><td>${s.strongest?`<b>${s.strongest.item}</b><br><span class="green">${p(s.strongest.forecast)}</span>`:'-'}</td><td>${s.weakest?`<b>${s.weakest.item}</b><br><span class="red">${p(s.weakest.forecast)}</span>`:'-'}</td><td class="num"><b>${f(s.avgEmp,1)}</b></td></tr>`).join('');let heatHead=agg.map(s=>`<th class="num">${shortStoreName(s.store)}</th>`).join('');let heatRows=systemRows.map((r,i)=>`<tr><td>${i+1}</td><td><b>${r.item}</b></td>${r.cells.map(c=>c?`<td class="hm-cell ${hmClass(c.forecast)}">${p(c.forecast)}</td>`:`<td class="hm-cell hm-none">-</td>`).join('')}<td class="hm-cell ${hmClass(r.avg)}">${p(r.avg)}</td></tr>`).join('');document.getElementById('storeComp').innerHTML=`<div class="store-hero"><div class="main-kpi"><div class="target-icon">◎</div><div><small>Thi đua theo siêu thị • ${scopeText()}</small><b>Dự kiến về ${totalDone}/${totalSubjects} môn</b><span class="muted">Mỗi siêu thị dùng đúng bộ môn/target riêng</span></div></div><div><small>Tỷ lệ hoàn thành TB</small><b>${f(avgRate,1)}%</b></div><div><small>Siêu thị ≥ 50%</small><b>${storeOver50}/${agg.length}</b></div><div><small>Siêu thị dưới 20%</small><b>${storeUnder20}/${agg.length}</b></div><div class="ring" style="--v:${Math.min(100,totalDone/totalSubjects*100)}%"><span>${totalDone}/${totalSubjects}</span></div></div><div class="card pad" style="margin-top:14px"><h2>📊 Xếp hạng siêu thị theo môn đạt dự kiến</h2><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Siêu thị</th><th class="num">Tổng NV</th><th class="num">Tỷ lệ môn đạt dự kiến</th><th class="num">Dự kiến về</th><th>Môn mạnh nhất</th><th>Môn yếu nhất</th><th class="num">Điểm TB NV</th></tr></thead><tbody>${rankRows}</tbody></table></div></div><div class="store-insights"><div class="card pad"><h2>🔥 Heatmap % dự kiến từng môn theo siêu thị</h2><div class="table-wrap"><table><thead><tr><th>STT</th><th>Môn thi đua</th>${heatHead}<th class="num">TB toàn hệ thống</th></tr></thead><tbody>${heatRows}</tbody></table></div><div class="tbl-note">Xanh ≥100%, Cam 50–99%, Đỏ &lt;50%, dấu “-” là siêu thị không có target/môn đó.</div></div><div class="card pad"><h2>🤖 Tổng quan nhanh</h2><div class="quick-card"><small class="muted">Siêu thị dẫn đầu</small><b class="green">${best?shortStoreName(best.store):'-'}</b><span>${best?`${f(best.rate,1)}% • ${best.done}/${best.subjects.length} môn`:''}</span></div><div class="quick-card"><small class="muted">Siêu thị cần cải thiện</small><b class="red">${need?shortStoreName(need.store):'-'}</b><span>${need?`${f(need.rate,1)}% • yếu nhất: ${need.weakest?.item||'-'}`:''}</span></div><div class="quick-card"><small class="muted">Môn yếu nhất toàn hệ thống</small><b class="red">${weakSubject?weakSubject.item:'-'}</b><span>${weakSubject?p(weakSubject.avg):''}</span></div></div></div>`}
+
+function renderRankEmp(){
+ let emps=employeesScoped();
+ let grouped={}; emps.forEach(e=>(grouped[e.store]=grouped[e.store]||[]).push(e));
+ const storeBlocks=Object.entries(grouped).map(([store,list])=>{
+   const sorted=list.slice().sort((a,b)=>b.total-a.total);
+   const cards=sorted.map((e,idx)=>{
+     const clsCard=idx<3?`rank-${idx+1}`:(e.total<60?'bottom':(e.total<75?'mid':''));
+     const best=e.subjects.slice().sort((a,b)=>b.forecastEmp-a.forecastEmp)[0];
+     const weak=e.weak||[];
+     const rows=e.subjects.slice().sort((a,b)=>b.forecastEmp-a.forecastEmp).map(s=>{
+       const pc=s.forecastEmp>=100?'green':s.forecastEmp>=50?'orange':'red';
+       const short=s.item.length>18?s.item.slice(0,18)+'…':s.item;
+       return `<tr><td class="subj" title="${s.item}">${short}</td><td class="num">${f(s.actual,1)}</td><td class="num muted">${f(s.targetNV,1)}</td><td class="num"><span class="emp-pill ${pc}">${p(s.forecastEmp)}</span></td><td class="num ${s.rank<=3?'green':'red'}">${s.rank<=3?'#'+s.rank:(s.rank?'BOT':'-')}</td></tr>`
+     }).join('');
+     const coach=weak.length?`Cần kéo: ${weak.slice(0,3).map(w=>`${w.item} (${p(w.forecastEmp)})`).join(', ')}`:'Giữ nhịp hiện tại, ưu tiên duy trì các môn đang đạt.';
+     return `<div class="emp-rank-card ${clsCard}" onclick="STATE.activeDetail='${e.id}';show('detailEmp')">
+       <div class="emp-rank-head">
+         <div class="emp-rank-badge">#${idx+1}</div>
+         <div><div class="emp-rank-name">${e.name}</div><div class="emp-rank-id">${e.id}</div></div>
+         <div class="emp-rank-score">${f(e.total,1)}<small>điểm</small></div>
+       </div>
+       <div class="emp-mini-kpis">
+         <div class="m g"><small>Môn đạt<br>dự kiến</small><b>${e.achievedProjected}</b></div>
+         <div class="m b"><small>DT dự<br>kiến</small><b>${p(e.dtForecast)}</b></div>
+         <div class="m o"><small>Hiệu<br>quả</small><b>${p(e.effPct)}</b></div>
+         <div class="m r"><small>Yếu<br>nhất</small><b>${weak.length}</b></div>
+       </div>
+       <table class="emp-rank-table"><thead><tr><th>Môn</th><th class="num">Thực</th><th class="num">Target</th><th class="num">% HT</th><th class="num">Hạng</th></tr></thead><tbody>${rows}</tbody></table>
+       <div class="emp-rank-coach"><b>AI Coach:</b> ${coach}</div>
+       <div class="emp-rank-footer"><span>Cập nhật: ${new Date().toLocaleTimeString('vi-VN')} ${new Date().toLocaleDateString('vi-VN')}</span><b>#CHIENTHANHBANHANG</b></div>
+     </div>`
+   }).join('');
+   return `<div class="rank-store-export-block" data-store="${safeFileName(store)}"><div class="emp-store-title">BÁO CÁO THI ĐUA CÁ NHÂN</div><div class="emp-store-sub">${shortStoreName(store)} • ${sorted[0]?.chain||''} • ${sorted.length} nhân viên • Đủ ${sorted[0]?.subjects.length||0} môn có target</div><div class="emp-card-grid">${cards}</div></div>`
+ }).join('');
+ document.getElementById('rankEmp').innerHTML=`<div class="card pad"><div class="emp-card-actions"><div><h2>👥 BXH nhân viên dạng Card • ${scopeText()}</h2><p class="muted">Bấm vào card để mở chi tiết. Card đã sắp theo điểm trong từng siêu thị và chỉ dùng môn có target.</p></div><div class="right"><button class="btn primary" onclick="exportRankEmpStoresSmart()">📸 Xuất thông minh 2 siêu thị</button><button class="btn" onclick="exportOneScreen('rankEmp')">Xuất toàn tab</button><button class="btn blue" onclick="show('rankEmpFull')">Xem bảng lớn</button></div></div></div>${storeBlocks}`
+}
+
+
+async function exportRankEmpStoresSmart(){
+  show('rankEmp');
+  await new Promise(r=>setTimeout(r,350));
+  const blocks=[...document.querySelectorAll('#rankEmp .rank-store-export-block')];
+  if(!blocks.length){toast('Không có dữ liệu siêu thị để xuất');return}
+  toast(`Đang xuất ${blocks.length} ảnh BXH theo siêu thị...`);
+  for(let i=0;i<blocks.length;i++){
+    const storeName=blocks[i].querySelector('.emp-store-sub')?.textContent?.split('•')[0]?.trim() || ('sieu_thi_'+(i+1));
+    await downloadElementAsPng(blocks[i],`BXH_${String(i+1).padStart(2,'0')}_${safeFileName(storeName)}.png`);
+  }
+  toast(`Đã xuất ${blocks.length} ảnh BXH siêu thị`);
+}
+
+function fullRankTable(){let emps=employeesScoped();let subjects=[...new Set(emps.flatMap(e=>e.subjects.map(s=>s.item)))].slice(0,18);return `<div class="card pad"><h2>📊 BXH nhân viên bảng lớn • ${scopeText()}</h2><div class="table-wrap"><table><thead><tr><th>Hạng</th><th>Nhân viên</th><th>Chuỗi</th><th class="num">Điểm</th><th class="num">DT dự kiến</th><th class="num">HQ</th><th class="num">Môn đạt dự kiến</th>${subjects.map(s=>`<th class="num">${s.split(' ').slice(0,3).join(' ')}</th>`).join('')}<th>Môn yếu</th></tr></thead><tbody>${emps.map(e=>`<tr><td class="rank">${e.rank}</td><td><b>${e.name}</b><br><small>${e.store}</small></td><td>${e.chain}</td><td class="num ${cls(e.total)}"><b>${f(e.total,1)}</b></td><td class="num ${cls(e.dtForecast)}">${p(e.dtForecast)}</td><td class="num">${p(e.effPct)}</td><td class="num">${e.achievedProjected}/${e.subjects.length}</td>${subjects.map(sub=>{let s=e.subjects.find(x=>x.item===sub);if(!s)return '<td class="heat none">-</td>';let c=s.forecastEmp>=100?'good':s.forecastEmp>=50?'mid':'bad';return `<td class="heat ${c}">${p(s.forecastEmp)}<br><small>#${s.rank}</small></td>`}).join('')}<td class="red">${e.weak.map(w=>w.item.split(' ')[0]).join(', ')}</td></tr>`).join('')}</tbody></table></div></div>`}
+function renderFull(){document.getElementById('rankEmpFull').innerHTML=fullRankTable()}
+
+function renderDetail(){let emps=employeesScoped();if(!emps.length){document.getElementById('detailEmp').innerHTML='<div class="card pad"><h2>Không có nhân viên theo bộ lọc hiện tại.</h2></div>';return}let e=emps.find(x=>x.id===STATE.activeDetail)||emps[0];STATE.activeDetail=e.id;let tabs=emps.map(x=>`<button class="${x.id===e.id?'active':''}" onclick="STATE.activeDetail='${x.id}';renderDetail()">${shortName(x.name)}</button>`).join('');let rows=e.subjects.slice().sort((a,b)=>b.forecastEmp-a.forecastEmp).map(s=>`<tr><td class="rank">#${s.rank}</td><td><b>${s.item}</b><br><small class="muted">${s.unit}</small></td><td class="num">${f(s.actual,2)}</td><td class="num">${f(s.targetNV,2)}</td><td class="num ${cls(s.empHT)}"><b>${p(s.empHT)}</b></td><td class="num ${cls(s.forecastEmp)}"><b>${p(s.forecastEmp)}</b></td><td class="num red">${f(s.gapNV,2)}</td><td>${bar(s.forecastEmp)}</td></tr>`).join('');document.getElementById('detailEmp').innerHTML=`<div class="tabs-inline no-print">${tabs}</div><div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px"><button class="btn primary" onclick="exportCurrentEmployeeDetail()">📸 Xuất ảnh nhân viên này</button><button class="btn blue" onclick="exportAllEmployeeDetails()">📸 Xuất ảnh nhân viên theo bộ lọc</button><button class="btn" onclick="exportEmployeeDetailsByFilter('weak')">🔴 Xuất NV dưới 70 điểm</button><button class="btn" onclick="exportEmployeeDetailsByFilter('Topzone')">Topzone</button><button class="btn" onclick="exportEmployeeDetailsByFilter('TGDĐ')">TGDĐ</button></div><div class="card pad" id="employeeDetailCard"><h2>🧾 Chi tiết nhân viên: ${e.name} - ${e.id}</h2><div class="grid g5"><div class="kpi"><small>Điểm</small><b class="${cls(e.total)}">${f(e.total,1)}</b></div><div class="kpi"><small>Hạng tổng</small><b>#${e.rank}</b></div><div class="kpi"><small>DT dự kiến</small><b class="${cls(e.dtForecast)}">${p(e.dtForecast)}</b></div><div class="kpi"><small>Hiệu quả dự kiến</small><b>${p(e.effPct)}</b></div><div class="kpi"><small>Môn đạt dự kiến</small><b>${e.achievedProjected}/${e.subjects.length}</b></div></div><h3 class="section-title" style="margin-top:16px">Môn thi đua - sắp xếp theo % dự kiến cao xuống thấp</h3><div class="table-wrap"><table><thead><tr><th>Thứ hạng</th><th>Môn thi đua</th><th class="num">Thực hiện</th><th class="num">Target NV</th><th class="num">% hoàn thành</th><th class="num">% dự kiến</th><th class="num">Còn lại</th><th>Tiến độ</th></tr></thead><tbody>${rows}</tbody></table></div></div>`}
+
+function renderIncome(){let emps=employeesScoped();document.getElementById('income').innerHTML=`<div class="card pad"><h2>💵 Thu nhập tham khảo • ${scopeText()}</h2><div class="table-wrap"><table><thead><tr><th>Nhân viên</th><th>Siêu thị</th><th class="num">Điểm</th><th class="num">Thưởng dự kiến</th><th>Ghi chú</th></tr></thead><tbody>${emps.map(e=>`<tr><td><b>${e.name}</b></td><td>${shortStoreName(e.store)}</td><td class="num">${f(e.total,1)}</td><td class="num red"><b>${f(Math.max(0,e.total)*100000,0)}</b></td><td class="muted">Tab này tách riêng khỏi thi đua.</td></tr>`).join('')}</tbody></table></div></div>`}
+function renderAI(){let emps=employeesScoped().slice().sort((a,b)=>a.total-b.total);document.getElementById('ai').innerHTML=`<div class="card pad"><h2>🤖 AI phân tích • ${scopeText()}</h2><div class="grid g2">${emps.map(e=>`<div class="employee-card"><h3 class="${e.total<60?'red':'orange'}">${e.name}</h3><p>Điểm <b>${f(e.total,1)}</b> | DT dự kiến <b>${p(e.dtForecast)}</b> | Môn đạt dự kiến <b>${e.achievedProjected}/${e.subjects.length}</b></p><p><b>Yếu môn:</b> ${e.weak.map(w=>`<span class="pill ${pillCls(w.forecastEmp)}">${w.item} ${p(w.forecastEmp)}</span>`).join('')}</p><p><b>Hành động:</b> ưu tiên ${e.weak.slice(0,2).map(w=>w.item).join(' và ')}.</p></div>`).join('')}</div></div>`}
+function renderRule(){document.getElementById('scoreRule').innerHTML=`<div class="card pad"><h2>🧮 Quy đổi điểm</h2><div class="grid g3"><div class="kpi"><small>Doanh thu dự kiến</small><b>DT hiện tại / tiến độ tháng</b><p class="muted">DT dự kiến = % DT hiện tại ÷ % ngày đã qua.</p></div><div class="kpi"><small>Hiệu quả dự kiến</small><b>Môn đạt dự kiến / Tổng môn</b><p class="muted">Môn đạt dự kiến = môn có % dự kiến ≥100%.</p></div><div class="kpi"><small>Tổng điểm</small><b>50% DT + 50% HQ</b><p class="muted">Tool dùng số dự kiến để phản ánh khả năng cuối tháng.</p></div></div></div>`}
+async function exportAllEmployeeDetails(){await exportEmployeeList(employeesScoped().slice().sort((a,b)=>a.rank-b.rank),'scope')}
+
+async function exportOneScreen(id){show(id);await new Promise(r=>setTimeout(r,250));let el=document.getElementById(id);if(window.html2canvas){let c=await html2canvas(el,{backgroundColor:'#07111f',scale:2});let a=document.createElement('a');a.download=`${id}_${Date.now()}.png`;a.href=c.toDataURL('image/png');a.click();toast('Đã xuất ảnh')}else{window.print()}}
+
+function renderAll(){rebuild(); updateScopeOptions(); renderNav(); renderTotalComp(); renderDashboard(); document.getElementById('pushTZ').innerHTML=push('Topzone'); document.getElementById('pushTGDD').innerHTML=push('TGDĐ'); renderStore(); renderStoreComp(); renderRankEmp(); renderFull(); renderDetail(); renderIncome(); renderRule(); renderAI(); renderImport()}
+
+
+
+/* ================= V6.2 HISTORY + ROLE SETTINGS PATCH =================
+   - Lưu dữ liệu theo tháng: 07/2026, 08/2026...
+   - Mỗi lần bấm Lưu & chạy lại sẽ tự lưu snapshot theo ngày dữ liệu.
+   - Tab So sánh data: so với hôm qua và cùng kỳ tháng trước.
+   - Tab Cài đặt: quyền Admin/QL, ẩn/hiện tab theo quyền.
+   - Mật khẩu đăng nhập được ẩn trên giao diện; Admin có thể đổi khi cần.
+============================================================ */
+(function initV62Patch(){
+  try{
+    if(!NAV.find(x=>x[0]==='compare')) NAV.push(['compare','📈 So sánh data']);
+    if(!NAV.find(x=>x[0]==='settings')) NAV.push(['settings','⚙️ Cài đặt']);
+  }catch(e){}
+})();
+const TD_DB_KEY='td_v6_monthly_history';
+const TD_ROLE_KEY='td_v6_role';
+const TD_ROLE_CFG='td_v6_role_config';
+const TD_PIN_HASH_KEY='td_v6_pin_hash';
+const DEFAULT_PIN_HASH={admin:1076444563, ql:1355957634};
+function hashPin(pin){
+  let h=2166136261;
+  for(let i=0;i<String(pin||'').length;i++){h^=String(pin).charCodeAt(i); h=Math.imul(h,16777619)>>>0;}
+  return h>>>0;
+}
+function getPinHash(){
+  try{return {...DEFAULT_PIN_HASH,...(JSON.parse(localStorage.getItem(TD_PIN_HASH_KEY))||{})}}catch(e){return {...DEFAULT_PIN_HASH}}
+}
+function setPinHash(o){localStorage.setItem(TD_PIN_HASH_KEY,JSON.stringify(o))}
+const ROLE_LABEL={admin:'Admin', ql:'QLY'};
+const DEFAULT_ROLE_CFG={
+  admin:['totalComp','dashboard','pushTZ','pushTGDD','rankStore','storeComp','rankEmp','rankEmpFull','detailEmp','income','scoreRule','ai','import','compare','settings'],
+  ql:['totalComp','dashboard','storeComp','rankEmp','detailEmp','ai','compare','settings']
+};
+function getRole(){return localStorage.getItem(TD_ROLE_KEY)||'admin'}
+function getRoleCfg(){try{return {...DEFAULT_ROLE_CFG,...(JSON.parse(localStorage.getItem(TD_ROLE_CFG))||{})}}catch(e){return {...DEFAULT_ROLE_CFG}}}
+function setRoleCfg(cfg){localStorage.setItem(TD_ROLE_CFG,JSON.stringify(cfg))}
+function visibleNav(){let role=getRole(), cfg=getRoleCfg(); let allowed=cfg[role]||DEFAULT_ROLE_CFG[role]||DEFAULT_ROLE_CFG.ql; return NAV.filter(n=>allowed.includes(n[0])||n[0]==='settings')}
+function getMonthKey(){return document.getElementById('monthSelect')?.value || '2026-07'}
+function getDB(){try{return JSON.parse(localStorage.getItem(TD_DB_KEY))||{months:{}}}catch(e){return {months:{}}}}
+function setDB(db){localStorage.setItem(TD_DB_KEY,JSON.stringify(db))}
+function ensureMonth(db,month){db.months=db.months||{}; if(!db.months[month]) db.months[month]={current:null,snapshots:{},createdAt:new Date().toISOString(),updatedAt:null}; return db.months[month]}
+function oldRawFallback(){try{return JSON.parse(localStorage.getItem('td_v5_fixed'))||{...DEFAULT}}catch(e){return {...DEFAULT}}}
+// Override raw/saveRaw to support monthly data versions.
+raw=function(){let db=getDB(), month=getMonthKey(); let m=ensureMonth(db,month); if(!m.current){m.current=oldRawFallback(); m.updatedAt=new Date().toISOString(); setDB(db)} return m.current||{...DEFAULT}}
+saveRaw=function(o){let db=getDB(), month=getMonthKey(); let m=ensureMonth(db,month); m.current=o; m.updatedAt=new Date().toISOString(); setDB(db); localStorage.setItem('td_v5_fixed',JSON.stringify(o))}
+function currentSummaryFromData(){
+  let day=dayInfo();
+  return {month:getMonthKey(), day:day.d, savedAt:new Date().toISOString(), employees:(DATA.employees||[]).map(e=>({
+    id:e.id,name:e.name,chain:e.chain,store:e.store,dtqd:e.dt?.dtqd||0,dtlk:e.dt?.dtlk||0,effPct:e.effPct||0,dtForecast:e.dtForecast??e.dtPct??0,total:e.total||0,achievedProjected:e.achievedProjected??e.achieved??0,subjects:(e.subjects||[]).map(s=>({item:s.item,actual:s.actual||0,targetNV:s.targetNV||0,empHT:s.empHT||0,forecastEmp:s.forecastEmp??s.empHT??0,rank:s.rank||0}))
+  })), stores:(DATA.stores||[]) }
+}
+function saveDailySnapshot(){let db=getDB(), month=getMonthKey(); let m=ensureMonth(db,month); let sum=currentSummaryFromData(); m.snapshots[String(sum.day).padStart(2,'0')]=sum; m.updatedAt=new Date().toISOString(); setDB(db); return sum}
+function monthShift(month,delta){let [y,m]=month.split('-').map(Number); m+=delta; while(m<1){m+=12;y--} while(m>12){m-=12;y++} return `${y}-${String(m).padStart(2,'0')}`}
+function bestSnapshot(month,day){let db=getDB(), m=db.months?.[month]; if(!m||!m.snapshots)return null; let keys=Object.keys(m.snapshots).map(Number).filter(x=>x<=day).sort((a,b)=>b-a); if(!keys.length)return null; return m.snapshots[String(keys[0]).padStart(2,'0')]}
+function snapshotByExact(month,day){let db=getDB(), m=db.months?.[month]; return m?.snapshots?.[String(day).padStart(2,'0')]||null}
+function compareRows(base,prevMonthSnap,yesterdaySnap){
+  let pMap=new Map((prevMonthSnap?.employees||[]).map(e=>[e.id,e]));
+  let yMap=new Map((yesterdaySnap?.employees||[]).map(e=>[e.id,e]));
+  return (base.employees||[]).map(e=>{let pm=pMap.get(e.id), yd=yMap.get(e.id); return {e,pm,yd,dtDelta:pm?e.dtqd-pm.dtqd:null,dtDeltaPct:pm&&pm.dtqd?((e.dtqd-pm.dtqd)/pm.dtqd*100):null,effDelta:pm?e.effPct-pm.effPct:null,totalDelta:pm?e.total-pm.total:null,dayDelta:yd?e.total-yd.total:null}})
+}
+function deltaCell(v,d=1,suffix=''){if(v==null||!isFinite(v))return '<span class="muted">Chưa có</span>'; let c=v>=0?'green':'red'; return `<b class="${c}">${v>=0?'+':''}${f(v,d)}${suffix}</b>`}
+function renderCompare(){
+  let base=currentSummaryFromData(); let day=base.day; let month=getMonthKey(); let prevMonth=monthShift(month,-1); let pm=bestSnapshot(prevMonth,day); let yd=day>1?snapshotByExact(month,day-1):null; let rows=compareRows(base,pm,yd).sort((a,b)=>(b.totalDelta??-999)-(a.totalDelta??-999));
+  let hasPm=!!pm, hasYd=!!yd;
+  document.getElementById('compare').innerHTML=`<div class="card pad"><h2>📈 So sánh data</h2><p class="muted">So sánh theo nhân viên giữa dữ liệu hiện tại, hôm qua và cùng kỳ tháng trước. Mỗi lần bấm <b>Lưu & chạy lại</b>, tool tự lưu snapshot theo ngày dữ liệu.</p><div class="grid g4"><div class="kpi"><small>Tháng hiện tại</small><b>${month}</b><small>Ngày ${String(day).padStart(2,'0')}</small></div><div class="kpi"><small>Cùng kỳ tháng trước</small><b>${prevMonth}</b><small>${hasPm?'Có dữ liệu ngày '+String(pm.day).padStart(2,'0'):'Chưa có dữ liệu'}</small></div><div class="kpi"><small>Hôm qua</small><b>${hasYd?'Có':'Chưa có'}</b><small>${hasYd?'Ngày '+String(yd.day).padStart(2,'0'):'Cần lưu snapshot ngày trước'}</small></div><div class="kpi"><small>Số snapshot tháng này</small><b>${Object.keys(getDB().months?.[month]?.snapshots||{}).length}</b></div></div></div><div class="card pad" style="margin-top:14px"><h2>Nhân viên so với cùng kỳ</h2><div class="table-wrap"><table><thead><tr><th>Nhân viên</th><th>Chuỗi</th><th class="num">DTQĐ hiện tại</th><th class="num">DTQĐ cùng kỳ</th><th class="num">+/- DT</th><th class="num">+/- DT%</th><th class="num">HQ hiện tại</th><th class="num">HQ cùng kỳ</th><th class="num">+/- HQ</th><th class="num">Điểm</th><th class="num">+/- điểm CK</th><th class="num">+/- hôm qua</th></tr></thead><tbody>${rows.map(r=>`<tr><td><b>${r.e.name}</b><br><small class="muted">${r.e.id} • ${shortStoreName(r.e.store)}</small></td><td>${r.e.chain}</td><td class="num"><b>${f(r.e.dtqd,2)}</b></td><td class="num">${r.pm?f(r.pm.dtqd,2):'<span class="muted">-</span>'}</td><td class="num">${deltaCell(r.dtDelta,2)}</td><td class="num">${deltaCell(r.dtDeltaPct,1,'%')}</td><td class="num">${p(r.e.effPct,1)}</td><td class="num">${r.pm?p(r.pm.effPct,1):'<span class="muted">-</span>'}</td><td class="num">${deltaCell(r.effDelta,1,'%')}</td><td class="num"><b>${f(r.e.total,1)}</b></td><td class="num">${deltaCell(r.totalDelta,1)}</td><td class="num">${deltaCell(r.dayDelta,1)}</td></tr>`).join('')}</tbody></table></div></div>`
+}
+function loginRole(role){let pin=document.getElementById('pin_'+role)?.value||''; let hashes=getPinHash(); if(hashPin(pin)!==(hashes[role]>>>0)){toast('Sai mật khẩu '+ROLE_LABEL[role]);return} localStorage.setItem(TD_ROLE_KEY,role); STATE.active='dashboard'; renderAll(); toast('Đã đăng nhập quyền '+ROLE_LABEL[role])}
+function changeRolePin(role){
+  if(getRole()!=='admin'){toast('Chỉ Admin được đổi mật khẩu');return}
+  let a=document.getElementById('newpin_'+role)?.value||'';
+  let b=document.getElementById('newpin2_'+role)?.value||'';
+  if(a.length<3){toast('Mật khẩu mới cần tối thiểu 3 ký tự');return}
+  if(a!==b){toast('Mật khẩu xác nhận chưa khớp');return}
+  let hashes=getPinHash(); hashes[role]=hashPin(a); setPinHash(hashes);
+  document.getElementById('newpin_'+role).value=''; document.getElementById('newpin2_'+role).value='';
+  toast('Đã đổi mật khẩu '+ROLE_LABEL[role]);
+}
+function resetRolePins(){
+  if(getRole()!=='admin'){toast('Chỉ Admin được reset mật khẩu');return}
+  if(confirm('Reset mật khẩu Admin và QLY về mặc định?')){localStorage.removeItem(TD_PIN_HASH_KEY); toast('Đã reset mật khẩu mặc định')}
+}
+function logoutRole(){localStorage.setItem(TD_ROLE_KEY,'ql'); STATE.active='dashboard'; renderAll(); toast('Đã chuyển sang quyền QLY')}
+function saveRoleTabs(role){let cfg=getRoleCfg(); cfg[role]=[...document.querySelectorAll(`#tabcfg_${role} input:checked`)].map(i=>i.value); if(!cfg[role].includes('settings')) cfg[role].push('settings'); setRoleCfg(cfg); renderAll(); toast('Đã lưu cấu hình tab cho '+ROLE_LABEL[role])}
+function backupAll(){let blob=new Blob([JSON.stringify({db:getDB(),roleCfg:getRoleCfg(),role:getRole()},null,2)],{type:'application/json'}); let a=document.createElement('a'); a.download='thidua_pro_backup_'+Date.now()+'.json'; a.href=URL.createObjectURL(blob); a.click(); URL.revokeObjectURL(a.href)}
+function restoreAll(ev){let file=ev.target.files?.[0]; if(!file)return; let fr=new FileReader(); fr.onload=()=>{try{let o=JSON.parse(fr.result); if(o.db)setDB(o.db); if(o.roleCfg)setRoleCfg(o.roleCfg); if(o.role)localStorage.setItem(TD_ROLE_KEY,o.role); renderAll(); toast('Đã restore dữ liệu')}catch(e){toast('File restore không hợp lệ')}}; fr.readAsText(file)}
+function renderTabConfig(role){let cfg=getRoleCfg(); let allowed=new Set(cfg[role]||[]); return `<div id="tabcfg_${role}" class="checkgrid">${NAV.map(n=>`<label><input type="checkbox" value="${n[0]}" ${allowed.has(n[0])?'checked':''} ${n[0]==='settings'?'disabled checked':''}> ${n[1]}</label>`).join('')}</div><button class="btn primary" onclick="saveRoleTabs('${role}')">Lưu tab cho ${ROLE_LABEL[role]}</button>`}
+function renderSettings(){let role=getRole(), db=getDB(); let months=Object.keys(db.months||{}).sort().reverse(); document.getElementById('settings').innerHTML=`<div class="card pad"><h2>⚙️ Cài đặt & phân quyền</h2><p class="muted">Quyền hiện tại: <b>${ROLE_LABEL[role]}</b>. Mật khẩu được ẩn trên giao diện; Admin có thể đổi khi cần.</p><div class="grid g2"><div class="kpi"><small>Đăng nhập Admin</small><b>🔒 Mật khẩu Admin</b><input id="pin_admin" class="btn" type="password" placeholder="Nhập mật khẩu Admin" autocomplete="current-password" style="width:100%;margin-top:8px"><button class="btn primary" style="margin-top:8px" onclick="loginRole('admin')">Vào Admin</button></div><div class="kpi"><small>Đăng nhập QLY</small><b>🔒 Mật khẩu QLY</b><input id="pin_ql" class="btn" type="password" placeholder="Nhập mật khẩu QLY" autocomplete="current-password" style="width:100%;margin-top:8px"><button class="btn blue" style="margin-top:8px" onclick="loginRole('ql')">Vào QLY</button></div></div></div>${role==='admin'?`<div class="card pad" style="margin-top:14px"><h2>🔐 Đổi mật khẩu</h2><p class="muted">Chỉ Admin được đổi mật khẩu. Mật khẩu mới lưu trên trình duyệt của máy đang dùng.</p><div class="grid g2"><div class="kpi"><small>Đổi mật khẩu Admin</small><input id="newpin_admin" class="btn" type="password" placeholder="Mật khẩu Admin mới" autocomplete="new-password" style="width:100%;margin-top:8px"><input id="newpin2_admin" class="btn" type="password" placeholder="Nhập lại mật khẩu mới" autocomplete="new-password" style="width:100%;margin-top:8px"><button class="btn primary" style="margin-top:8px" onclick="changeRolePin('admin')">Lưu mật khẩu Admin</button></div><div class="kpi"><small>Đổi mật khẩu QLY</small><input id="newpin_ql" class="btn" type="password" placeholder="Mật khẩu QLY mới" autocomplete="new-password" style="width:100%;margin-top:8px"><input id="newpin2_ql" class="btn" type="password" placeholder="Nhập lại mật khẩu mới" autocomplete="new-password" style="width:100%;margin-top:8px"><button class="btn blue" style="margin-top:8px" onclick="changeRolePin('ql')">Lưu mật khẩu QLY</button></div></div><button class="btn red" style="margin-top:12px" onclick="resetRolePins()">Reset mật khẩu mặc định</button></div>`:''}<div class="grid g2" style="margin-top:14px"><div class="card pad"><h2>Ẩn/hiện tab quyền QLY</h2>${renderTabConfig('ql')}</div><div class="card pad"><h2>Ẩn/hiện tab quyền Admin</h2>${renderTabConfig('admin')}</div></div><div class="card pad" style="margin-top:14px"><h2>Phiên bản dữ liệu theo tháng</h2><div class="grid g3"><div class="kpi"><small>Tháng đang xem</small><b>${getMonthKey()}</b></div><div class="kpi"><small>Số tháng đã lưu</small><b>${months.length}</b></div><div class="kpi"><small>Snapshot tháng này</small><b>${Object.keys(db.months?.[getMonthKey()]?.snapshots||{}).length}</b></div></div><div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Tháng</th><th class="num">Số snapshot</th><th>Cập nhật cuối</th></tr></thead><tbody>${months.map(m=>`<tr><td><b>${m}</b></td><td class="num">${Object.keys(db.months[m].snapshots||{}).length}</td><td>${db.months[m].updatedAt?new Date(db.months[m].updatedAt).toLocaleString('vi-VN'):'-'}</td></tr>`).join('')}</tbody></table></div><div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" onclick="backupAll()">Backup toàn bộ</button><label class="btn blue">Restore <input type="file" accept=".json" onchange="restoreAll(event)" style="display:none"></label><button class="btn red" onclick="if(confirm('Xóa toàn bộ dữ liệu lịch sử?')){localStorage.removeItem(TD_DB_KEY);renderAll()}">Xóa lịch sử</button></div></div>`}
+// Override navigation to apply role-based visibility.
+renderNav=function(){let nav=visibleNav(); if(!nav.find(n=>n[0]===STATE.active)){STATE.active=nav[0]?.[0]||'dashboard'} document.getElementById('nav').innerHTML=nav.map(n=>`<button class="${n[0]===STATE.active?'active':''}" onclick="show('${n[0]}')">${n[1]}</button>`).join('')+`<div class="group">Quyền: ${ROLE_LABEL[getRole()]}</div>`}
+show=function(id){let nav=visibleNav(); if(!nav.find(n=>n[0]===id)) id=nav[0]?.[0]||'dashboard'; STATE.active=id; document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id)); renderNav(); if(id==='detailEmp')renderDetail(); if(id==='compare')renderCompare(); if(id==='settings')renderSettings()}
+// Override save import to auto snapshot.
+saveImport=function(){let r={}; document.querySelectorAll('[id^="inp_"]').forEach(t=>r[t.id.replace('inp_','')]=t.value); saveRaw(r); renderAll(); saveDailySnapshot(); renderAll(); show('dashboard'); toast('Đã lưu dữ liệu, tạo snapshot ngày '+String(dayInfo().d).padStart(2,'0'))}
+// Override render all to include compare/settings.
+renderAll=function(){rebuild(); updateScopeOptions(); renderNav(); renderTotalComp(); renderDashboard(); document.getElementById('pushTZ').innerHTML=push('Topzone'); document.getElementById('pushTGDD').innerHTML=push('TGDĐ'); renderStore(); renderStoreComp(); renderRankEmp(); renderFull(); renderDetail(); renderIncome(); renderRule(); renderAI(); renderImport(); renderCompare(); renderSettings(); show(STATE.active)}
+renderAll();
+
+
+/* ================= V6.3 ROLE LOGIN PATCH =================
+   - Không tự vào Admin khi mở tool.
+   - Mở tool sẽ hiện màn hình đăng nhập.
+   - Nhập mật khẩu Admin hoặc QLY thì vào đúng quyền đó.
+   - Có nút Đăng xuất.
+   - Chỉ Admin mới thấy Cài đặt và được ẩn/hiện tab.
+============================================================ */
+(function injectRoleLoginStyle(){
+  const css=`
+  .login-wall{min-height:calc(100vh - 120px);display:grid;place-items:center;padding:20px}
+  .login-card{width:min(920px,96vw);background:linear-gradient(180deg,#10213a,#0b1728);border:1px solid var(--line);border-radius:22px;box-shadow:0 28px 70px rgba(0,0,0,.38);padding:24px}
+  .login-title{display:flex;gap:14px;align-items:center;margin-bottom:18px}.login-title .ico{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:grid;place-items:center;font-size:30px}.login-title h1{margin:0;font-size:30px}.login-title p{margin:4px 0 0;color:var(--muted);font-weight:800}
+  .login-options{display:grid;grid-template-columns:1fr 1fr;gap:14px}.login-box{background:#0b1b30;border:1px solid var(--line);border-radius:17px;padding:18px}.login-box h2{margin:0 0 8px}.login-box input{width:100%;margin-top:10px}.login-box button{width:100%;margin-top:10px}.role-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:#0d1b2f;color:#dbeafe;font-weight:900}.role-chip.admin{background:#052e1d;color:#86efac}.role-chip.ql{background:#1e1b4b;color:#c4b5fd}.logout-mini{padding:8px 10px!important}.nav-login-note{padding:12px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-weight:800;margin-top:8px}.admin-only-note{border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.08);color:#fde68a;border-radius:12px;padding:10px;margin:10px 0;font-weight:800}
+  @media(max-width:900px){.login-options{grid-template-columns:1fr}.login-title h1{font-size:24px}}
+  `;
+  const st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
+})();
+
+const TD_SESSION_ROLE_KEY='td_v6_session_role';
+// Bỏ quyền lưu cũ để mỗi lần mở file phải đăng nhập lại theo đúng mật khẩu nhập vào.
+try{ localStorage.removeItem(TD_ROLE_KEY); }catch(e){}
+
+getRole=function(){return sessionStorage.getItem(TD_SESSION_ROLE_KEY)||''}
+function isLoggedIn(){return !!getRole()}
+
+visibleNav=function(){
+  const role=getRole();
+  if(!role) return [['settings','🔐 Đăng nhập']];
+  let cfg=getRoleCfg();
+  let allowed=cfg[role]||DEFAULT_ROLE_CFG[role]||DEFAULT_ROLE_CFG.ql;
+  // Chỉ Admin được thấy Cài đặt. QLY không được thấy tab này dù config cũ có lưu.
+  if(role!=='admin') allowed=allowed.filter(x=>x!=='settings' && x!=='import');
+  return NAV.filter(n=>allowed.includes(n[0]) || (role==='admin' && n[0]==='settings'));
+}
+
+loginRole=function(role){
+  const pin=document.getElementById('pin_'+role)?.value||'';
+  const hashes=getPinHash();
+  if(hashPin(pin)!==(hashes[role]>>>0)){toast('Sai mật khẩu '+ROLE_LABEL[role]);return}
+  sessionStorage.setItem(TD_SESSION_ROLE_KEY,role);
+  STATE.active='dashboard';
+  renderAll();
+  toast('Đã đăng nhập quyền '+ROLE_LABEL[role]);
+}
+
+logoutRole=function(){
+  sessionStorage.removeItem(TD_SESSION_ROLE_KEY);
+  STATE.active='settings';
+  renderAll();
+  toast('Đã đăng xuất');
+}
+
+function updateRoleBar(){
+  const actions=document.querySelector('.top .actions');
+  if(!actions) return;
+  let bar=document.getElementById('roleBar');
+  if(!bar){
+    bar=document.createElement('span');
+    bar.id='roleBar';
+    bar.style.display='inline-flex';
+    bar.style.gap='8px';
+    bar.style.alignItems='center';
+    actions.insertBefore(bar,actions.firstChild);
+  }
+  const role=getRole();
+  if(!role){
+    bar.innerHTML=`<span class="role-chip">🔐 Chưa đăng nhập</span>`;
+  }else{
+    const cls=role==='admin'?'admin':'ql';
+    bar.innerHTML=`<span class="role-chip ${cls}">🔓 Quyền: ${ROLE_LABEL[role]}</span><button class="btn red logout-mini" onclick="logoutRole()">Đăng xuất</button>`;
+  }
+}
+
+renderNav=function(){
+  const nav=visibleNav();
+  if(!isLoggedIn()) STATE.active='settings';
+  if(isLoggedIn() && !nav.find(n=>n[0]===STATE.active)) STATE.active=nav[0]?.[0]||'dashboard';
+  document.getElementById('nav').innerHTML=nav.map(n=>`<button class="${n[0]===STATE.active?'active':''}" onclick="show('${n[0]}')">${n[1]}</button>`).join('') + (isLoggedIn()?`<div class="group">Quyền: ${ROLE_LABEL[getRole()]}</div><button onclick="logoutRole()">🚪 Đăng xuất</button>`:`<div class="nav-login-note">Nhập mật khẩu Admin hoặc QLY để vào tool.</div>`);
+  updateRoleBar();
+}
+
+show=function(id){
+  const nav=visibleNav();
+  if(!isLoggedIn()) id='settings';
+  else if(!nav.find(n=>n[0]===id)) id=nav[0]?.[0]||'dashboard';
+  STATE.active=id;
+  document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));
+  renderNav();
+  if(id==='detailEmp')renderDetail();
+  if(id==='compare')renderCompare();
+  if(id==='settings')renderSettings();
+}
+
+renderTabConfig=function(role){
+  if(getRole()!=='admin') return `<div class="admin-only-note">Chỉ Admin mới được ẩn/hiện tab.</div>`;
+  let cfg=getRoleCfg();
+  let allowed=new Set(cfg[role]||[]);
+  const canCheck=(tab)=> role==='admin' ? true : !['settings','import'].includes(tab);
+  return `<div id="tabcfg_${role}" class="checkgrid">${NAV.map(n=>{
+    const locked=(role==='admin' && n[0]==='settings') || !canCheck(n[0]);
+    const checked=(role==='admin' && n[0]==='settings') || (allowed.has(n[0]) && canCheck(n[0]));
+    return `<label><input type="checkbox" value="${n[0]}" ${checked?'checked':''} ${locked?'disabled':''}> ${n[1]} ${locked&&role==='ql'?'<small class="muted">(Admin only)</small>':''}</label>`;
+  }).join('')}</div><button class="btn primary" onclick="saveRoleTabs('${role}')">Lưu tab cho ${ROLE_LABEL[role]}</button>`;
+}
+
+saveRoleTabs=function(role){
+  if(getRole()!=='admin'){toast('Chỉ Admin được ẩn/hiện tab');return}
+  let cfg=getRoleCfg();
+  let list=[...document.querySelectorAll(`#tabcfg_${role} input:checked`)].map(i=>i.value);
+  if(role==='admin' && !list.includes('settings')) list.push('settings');
+  if(role==='ql') list=list.filter(x=>!['settings','import'].includes(x));
+  cfg[role]=list;
+  setRoleCfg(cfg);
+  renderAll();
+  toast('Đã lưu cấu hình tab cho '+ROLE_LABEL[role]);
+}
+
+renderSettings=function(){
+  const role=getRole();
+  const el=document.getElementById('settings');
+  if(!role){
+    el.innerHTML=`<div class="login-wall"><div class="login-card"><div class="login-title"><div class="ico">🏆</div><div><h1>Đăng nhập Tool Thi Đua Pro</h1><p>Nhập mật khẩu quyền nào thì vào đúng quyền đó. Mật khẩu không hiển thị trên màn hình.</p></div></div><div class="login-options"><div class="login-box"><h2>👑 Admin</h2><p class="muted">Toàn quyền: Import, Cài đặt, ẩn/hiện tab, đổi mật khẩu.</p><input id="pin_admin" class="btn" type="password" placeholder="Nhập mật khẩu Admin" autocomplete="current-password" onkeydown="if(event.key==='Enter')loginRole('admin')"><button class="btn primary" onclick="loginRole('admin')">Vào quyền Admin</button></div><div class="login-box"><h2>👨‍💼 QLY</h2><p class="muted">Chỉ xem các tab được Admin cho phép. Không có quyền ẩn/hiện tab.</p><input id="pin_ql" class="btn" type="password" placeholder="Nhập mật khẩu QLY" autocomplete="current-password" onkeydown="if(event.key==='Enter')loginRole('ql')"><button class="btn blue" onclick="loginRole('ql')">Vào quyền QLY</button></div></div></div></div>`;
+    return;
+  }
+  if(role!=='admin'){
+    el.innerHTML=`<div class="card pad"><h2>🔒 Cài đặt bị khóa</h2><p class="muted">Bạn đang ở quyền <b>${ROLE_LABEL[role]}</b>. Chỉ Admin mới có quyền Cài đặt, đổi mật khẩu và ẩn/hiện tab.</p><button class="btn red" onclick="logoutRole()">Đăng xuất</button></div>`;
+    return;
+  }
+  let db=getDB(); let months=Object.keys(db.months||{}).sort().reverse();
+  el.innerHTML=`<div class="card pad"><h2>⚙️ Cài đặt & phân quyền</h2><p class="muted">Quyền hiện tại: <b>Admin</b>. Mật khẩu được ẩn trên giao diện; Admin có thể đổi khi cần.</p><div class="grid g2"><div class="kpi"><small>Đăng nhập lại Admin</small><b>🔒 Mật khẩu Admin</b><input id="pin_admin" class="btn" type="password" placeholder="Nhập mật khẩu Admin" autocomplete="current-password" style="width:100%;margin-top:8px"><button class="btn primary" style="margin-top:8px" onclick="loginRole('admin')">Vào Admin</button></div><div class="kpi"><small>Chuyển sang QLY</small><b>🔒 Mật khẩu QLY</b><input id="pin_ql" class="btn" type="password" placeholder="Nhập mật khẩu QLY" autocomplete="current-password" style="width:100%;margin-top:8px"><button class="btn blue" style="margin-top:8px" onclick="loginRole('ql')">Vào QLY</button></div></div></div><div class="card pad" style="margin-top:14px"><h2>🔐 Đổi mật khẩu</h2><p class="muted">Chỉ Admin được đổi mật khẩu. Mật khẩu mới lưu trên trình duyệt của máy đang dùng.</p><div class="grid g2"><div class="kpi"><small>Đổi mật khẩu Admin</small><input id="newpin_admin" class="btn" type="password" placeholder="Mật khẩu Admin mới" autocomplete="new-password" style="width:100%;margin-top:8px"><input id="newpin2_admin" class="btn" type="password" placeholder="Nhập lại mật khẩu mới" autocomplete="new-password" style="width:100%;margin-top:8px"><button class="btn primary" style="margin-top:8px" onclick="changeRolePin('admin')">Lưu mật khẩu Admin</button></div><div class="kpi"><small>Đổi mật khẩu QLY</small><input id="newpin_ql" class="btn" type="password" placeholder="Mật khẩu QLY mới" autocomplete="new-password" style="width:100%;margin-top:8px"><input id="newpin2_ql" class="btn" type="password" placeholder="Nhập lại mật khẩu mới" autocomplete="new-password" style="width:100%;margin-top:8px"><button class="btn blue" style="margin-top:8px" onclick="changeRolePin('ql')">Lưu mật khẩu QLY</button></div></div><button class="btn red" style="margin-top:12px" onclick="resetRolePins()">Reset mật khẩu mặc định</button></div><div class="grid g2" style="margin-top:14px"><div class="card pad"><h2>Ẩn/hiện tab quyền QLY</h2>${renderTabConfig('ql')}</div><div class="card pad"><h2>Ẩn/hiện tab quyền Admin</h2>${renderTabConfig('admin')}</div></div><div class="card pad" style="margin-top:14px"><h2>Phiên bản dữ liệu theo tháng</h2><div class="grid g3"><div class="kpi"><small>Tháng đang xem</small><b>${getMonthKey()}</b></div><div class="kpi"><small>Số tháng đã lưu</small><b>${months.length}</b></div><div class="kpi"><small>Snapshot tháng này</small><b>${Object.keys(db.months?.[getMonthKey()]?.snapshots||{}).length}</b></div></div><div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Tháng</th><th class="num">Số snapshot</th><th>Cập nhật cuối</th></tr></thead><tbody>${months.map(m=>`<tr><td><b>${m}</b></td><td class="num">${Object.keys(db.months[m].snapshots||{}).length}</td><td>${db.months[m].updatedAt?new Date(db.months[m].updatedAt).toLocaleString('vi-VN'):'-'}</td></tr>`).join('')}</tbody></table></div><div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" onclick="backupAll()">Backup toàn bộ</button><label class="btn blue">Restore <input type="file" accept=".json" onchange="restoreAll(event)" style="display:none"></label><button class="btn red" onclick="if(confirm('Xóa toàn bộ dữ liệu lịch sử?')){localStorage.removeItem(TD_DB_KEY);renderAll()}">Xóa lịch sử</button></div></div>`;
+}
+
+const __baseRenderAllV63=renderAll;
+renderAll=function(){
+  if(!isLoggedIn()){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id==='settings'));
+    renderNav();
+    renderSettings();
+    updateRoleBar();
+    return;
+  }
+  __baseRenderAllV63();
+  updateRoleBar();
+}
+renderAll();
+
+</script>
+
+<script>
+/* V6.2 Single PIN Login Override
+   - One password box only
+   - Password decides role automatically
+   - Wrong password cannot enter
+   - Only Admin can open Settings / hide tabs
+*/
+(function(){
+  function byId(id){return document.getElementById(id)}
+  window.loginBySinglePin=function(){
+    const pin=(byId('single_pin')?.value||'').trim();
+    const hashes=getPinHash();
+    let role=null;
+    if(hashPin(pin)===(hashes.admin>>>0)) role='admin';
+    else if(hashPin(pin)===(hashes.ql>>>0)) role='ql';
+    if(!role){
+      toast('Sai mật khẩu. Không thể vào tool.');
+      const input=byId('single_pin');
+      if(input){input.value=''; input.focus(); input.style.borderColor='#ef4444'; setTimeout(()=>input.style.borderColor='',900)}
+      return;
+    }
+    sessionStorage.setItem(TD_SESSION_ROLE_KEY,role);
+    STATE.active='dashboard';
+    renderAll();
+    toast('Đã đăng nhập quyền '+ROLE_LABEL[role]);
+  };
+
+  // Replace login page with one input only.
+  const oldRenderSettings=window.renderSettings;
+  window.renderSettings=function(){
+    const el=byId('settings');
+    if(!el) return;
+    const role=getRole();
+    const db=getDB();
+    const months=Object.keys(db.months||{}).sort().reverse();
+    if(!role){
+      el.innerHTML=`
+      <div class="login-wall">
+        <div class="login-card" style="max-width:620px">
+          <div class="login-title">
+            <div class="ico">🔐</div>
+            <div>
+              <h1>Topzone Đà Nẵng</h1>
+              <p>Hệ thống Quản lý Thi đua & KPI</p>
+            </div>
+          </div>
+          <div class="login-box">
+            <h2>Nhập mật khẩu</h2>
+            <p class="muted">Sai mật khẩu sẽ không vào được tool.</p>
+            <input id="single_pin" class="btn" type="password" placeholder="Nhập mật khẩu" autocomplete="current-password" autofocus onkeydown="if(event.key==='Enter')loginBySinglePin()">
+            <button class="btn primary" onclick="loginBySinglePin()">Vào tool</button>
+          </div>
+        </div>
+      </div>`;
+      setTimeout(()=>byId('single_pin')?.focus(),50);
+      return;
+    }
+    if(role!=='admin'){
+      el.innerHTML=`<div class="card pad"><h2>🔒 Cài đặt bị khóa</h2><p class="muted">Bạn đang ở quyền <b>${ROLE_LABEL[role]}</b>. Chỉ Admin mới có quyền Cài đặt, đổi mật khẩu và ẩn/hiện tab.</p><button class="btn red" onclick="logoutRole()">Đăng xuất</button></div>`;
+      return;
+    }
+    el.innerHTML=`<div class="card pad"><h2>⚙️ Cài đặt & phân quyền</h2><p class="muted">Quyền hiện tại: <b>Admin</b>. Chỉ Admin được ẩn/hiện tab và đổi mật khẩu.</p></div><div class="card pad" style="margin-top:14px"><h2>🔐 Đổi mật khẩu</h2><p class="muted">Mật khẩu mới lưu trên trình duyệt của máy đang dùng.</p><div class="grid g2"><div class="kpi"><small>Đổi mật khẩu Admin</small><input id="newpin_admin" class="btn" type="password" placeholder="Mật khẩu Admin mới" autocomplete="new-password" style="width:100%;margin-top:8px"><input id="newpin2_admin" class="btn" type="password" placeholder="Nhập lại mật khẩu mới" autocomplete="new-password" style="width:100%;margin-top:8px"><button class="btn primary" style="margin-top:8px" onclick="changeRolePin('admin')">Lưu mật khẩu Admin</button></div><div class="kpi"><small>Đổi mật khẩu QLY</small><input id="newpin_ql" class="btn" type="password" placeholder="Mật khẩu QLY mới" autocomplete="new-password" style="width:100%;margin-top:8px"><input id="newpin2_ql" class="btn" type="password" placeholder="Nhập lại mật khẩu mới" autocomplete="new-password" style="width:100%;margin-top:8px"><button class="btn blue" style="margin-top:8px" onclick="changeRolePin('ql')">Lưu mật khẩu QLY</button></div></div><button class="btn red" style="margin-top:12px" onclick="resetRolePins()">Reset mật khẩu mặc định</button></div><div class="grid g2" style="margin-top:14px"><div class="card pad"><h2>Ẩn/hiện tab quyền QLY</h2>${renderTabConfig('ql')}</div><div class="card pad"><h2>Ẩn/hiện tab quyền Admin</h2>${renderTabConfig('admin')}</div></div><div class="card pad" style="margin-top:14px"><h2>Phiên bản dữ liệu theo tháng</h2><div class="grid g3"><div class="kpi"><small>Tháng đang xem</small><b>${getMonthKey()}</b></div><div class="kpi"><small>Số tháng đã lưu</small><b>${months.length}</b></div><div class="kpi"><small>Snapshot tháng này</small><b>${Object.keys(db.months?.[getMonthKey()]?.snapshots||{}).length}</b></div></div><div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Tháng</th><th class="num">Số snapshot</th><th>Cập nhật cuối</th></tr></thead><tbody>${months.map(m=>`<tr><td><b>${m}</b></td><td class="num">${Object.keys(db.months[m].snapshots||{}).length}</td><td>${db.months[m].updatedAt?new Date(db.months[m].updatedAt).toLocaleString('vi-VN'):'-'}</td></tr>`).join('')}</tbody></table></div><div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" onclick="backupAll()">Backup toàn bộ</button><label class="btn blue">Restore <input type="file" accept=".json" onchange="restoreAll(event)" style="display:none"></label><button class="btn red" onclick="if(confirm('Xóa toàn bộ dữ liệu lịch sử?')){localStorage.removeItem(TD_DB_KEY);renderAll()}">Xóa lịch sử</button></div></div>`;
+  };
+
+  // Make sure menu does not show normal tabs until logged in.
+  const oldRenderNav=window.renderNav;
+  window.renderNav=function(){
+    const nav=visibleNav();
+    const navEl=byId('nav');
+    if(!navEl) return;
+    navEl.innerHTML=nav.map(n=>`<button class="${n[0]===STATE.active?'active':''}" onclick="show('${n[0]}')">${n[1]}</button>`).join('') + (isLoggedIn()?`<div class="group">Quyền: ${ROLE_LABEL[getRole()]}</div><button onclick="logoutRole()">🚪 Đăng xuất</button>`:`<div class="nav-login-note">Nhập mật khẩu để vào tool.</div>`);
+  };
+
+  // Re-render with new login UI after this override loads.
+  if(typeof renderAll==='function') renderAll();
+})();
+</script>
+
+
+<script>
+/* V6.4 QLY Import Permission Patch
+   - QLY can access Import dữ liệu.
+   - Only Admin can access Settings and hide/show tabs.
+   - Admin can still hide Import for QLY from Settings if needed.
+*/
+(function(){
+  const MIG_KEY='td_v6_migrate_ql_import_v1';
+  try{
+    if(!localStorage.getItem(MIG_KEY)){
+      const cfg=getRoleCfg();
+      cfg.ql=Array.from(new Set([...(cfg.ql||[]),'import']));
+      cfg.ql=cfg.ql.filter(x=>x!=='settings');
+      setRoleCfg(cfg);
+      localStorage.setItem(MIG_KEY,'1');
+    }
+  }catch(e){}
+
+  window.visibleNav=function(){
+    const role=getRole();
+    if(!role) return [['settings','🔐 Đăng nhập']];
+    const cfg=getRoleCfg();
+    let allowed=[...(cfg[role]||DEFAULT_ROLE_CFG[role]||DEFAULT_ROLE_CFG.ql||[])];
+    if(role!=='admin') allowed=allowed.filter(x=>x!=='settings');
+    return NAV.filter(n=>allowed.includes(n[0]) || (role==='admin' && n[0]==='settings'));
+  };
+
+  window.renderTabConfig=function(role){
+    if(getRole()!=='admin') return `<div class="admin-only-note">Chỉ Admin mới được ẩn/hiện tab.</div>`;
+    const cfg=getRoleCfg();
+    const allowed=new Set(cfg[role]||[]);
+    return `<div id="tabcfg_${role}" class="checkgrid">${NAV.map(n=>{
+      const isSettings=n[0]==='settings';
+      const locked=(role==='admin' && isSettings) || (role==='ql' && isSettings);
+      const checked=(role==='admin' && isSettings) || (allowed.has(n[0]) && !(role==='ql' && isSettings));
+      return `<label><input type="checkbox" value="${n[0]}" ${checked?'checked':''} ${locked?'disabled':''}> ${n[1]} ${role==='ql'&&isSettings?'<small class="muted">(Admin only)</small>':''}</label>`;
+    }).join('')}</div><button class="btn primary" onclick="saveRoleTabs('${role}')">Lưu tab cho ${ROLE_LABEL[role]}</button>`;
+  };
+
+  window.saveRoleTabs=function(role){
+    if(getRole()!=='admin'){toast('Chỉ Admin được ẩn/hiện tab');return}
+    const cfg=getRoleCfg();
+    let list=[...document.querySelectorAll(`#tabcfg_${role} input:checked`)].map(i=>i.value);
+    if(role==='admin' && !list.includes('settings')) list.push('settings');
+    if(role==='ql') list=list.filter(x=>x!=='settings');
+    cfg[role]=Array.from(new Set(list));
+    setRoleCfg(cfg);
+    renderAll();
+    toast('Đã lưu cấu hình tab cho '+ROLE_LABEL[role]);
+  };
+
+  // Make top menu refresh immediately after patch.
+  if(typeof renderAll==='function') renderAll();
+})();
+</script>
+
+</body></html>
