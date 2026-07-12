@@ -3,12 +3,17 @@
 
   const CFG = window.CLOUD_CONFIG || {};
   const TOKEN_KEY = 'td_cloud_api_token';
-  const META_KEY = 'td_cloud_meta_v8';
+  const META_KEY = 'td_cloud_meta_v81';
   const DEVICE_KEY = 'td_cloud_device_v8';
+  const DIRTY_KEY = 'td_cloud_dirty_v81';
   const SYNCABLE_PREFIX = 'td_';
-  const EXCLUDED_KEYS = new Set([TOKEN_KEY, META_KEY, DEVICE_KEY]);
+  const EXCLUDED_KEYS = new Set([TOKEN_KEY, META_KEY, DEVICE_KEY, DIRTY_KEY]);
+
+  const POLL_MS = 15000;
   let autoTimer = null;
+  let pollTimer = null;
   let syncing = false;
+  let lastRemoteNoticeRevision = 0;
 
   function getDeviceId() {
     let id = localStorage.getItem(DEVICE_KEY);
@@ -42,16 +47,29 @@
   }
 
   function getMeta() {
-    try {
-      return JSON.parse(localStorage.getItem(META_KEY) || '{}');
-    } catch (_) {
-      return {};
-    }
+    try { return JSON.parse(localStorage.getItem(META_KEY) || '{}'); }
+    catch (_) { return {}; }
   }
 
   function setMeta(meta) {
     localStorage.setItem(META_KEY, JSON.stringify(meta || {}));
     updateStatus();
+  }
+
+  function isDirty() {
+    return localStorage.getItem(DIRTY_KEY) === '1';
+  }
+
+  function setDirty(value) {
+    localStorage.setItem(DIRTY_KEY, value ? '1' : '0');
+    updateStatus();
+  }
+
+  function isEditing() {
+    const el = document.activeElement;
+    if (!el) return false;
+    const tag = el.tagName;
+    return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || el.isContentEditable;
   }
 
   function collectState() {
@@ -74,7 +92,6 @@
       throw new Error('Dữ liệu cloud không đúng định dạng');
     }
 
-    // Only replace application keys. Keep the device token/meta on this browser.
     const existing = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -149,24 +166,27 @@
 
     if (!response.ok) throw new Error('HTTP ' + response.status);
     const text = await response.text();
-    try {
-      return JSON.parse(text);
-    } catch (_) {
-      throw new Error('API trả về dữ liệu không hợp lệ');
-    }
+    try { return JSON.parse(text); }
+    catch (_) { throw new Error('API trả về dữ liệu không hợp lệ'); }
   }
 
-  async function checkApi() {
-    const token = getToken(true);
-    if (!token) throw new Error('Chưa nhập API_TOKEN');
-
+  async function getRemoteMeta() {
+    const token = getToken(false);
+    if (!token) return null;
     const result = await jsonp({
       action: 'meta',
       token,
       key: CFG.stateKey || 'MAIN'
     });
     if (!result.ok) throw new Error(result.error || 'API báo lỗi');
+    return result;
+  }
 
+  async function checkApi() {
+    const token = getToken(true);
+    if (!token) throw new Error('Chưa nhập API_TOKEN');
+
+    const result = await getRemoteMeta();
     setMeta({
       ...getMeta(),
       revision: Number(result.revision || 0),
@@ -205,12 +225,13 @@
       if (result.conflict) {
         setMeta({...meta, revision: Number(result.currentRevision || 0), updatedAt: result.updatedAt || ''});
         throw new Error(
-          'Dữ liệu cloud đã được sửa trên máy khác. ' +
-          'Hãy bấm “Tải từ cloud”, hoặc dùng “Ghi đè cloud” nếu chắc chắn.'
+          'Cloud đã được sửa trên máy khác. Hãy tải từ cloud trước, ' +
+          'hoặc dùng “Ghi đè cloud” nếu chắc chắn máy này đúng.'
         );
       }
       if (!result.ok) throw new Error(result.error || 'Không lưu được dữ liệu');
 
+      setDirty(false);
       setMeta({
         revision: Number(result.revision || 0),
         updatedAt: result.updatedAt || new Date().toISOString(),
@@ -225,7 +246,7 @@
     }
   }
 
-  async function pullCloud() {
+  async function pullCloud({silent = false, force = false} = {}) {
     if (syncing) return;
     const token = getToken(true);
     if (!token) throw new Error('Chưa nhập API_TOKEN');
@@ -240,26 +261,37 @@
       });
       if (!result.ok) throw new Error(result.error || 'Không tải được dữ liệu');
       if (!result.exists || !result.payload) {
-        notify('Cloud chưa có dữ liệu. Hãy đẩy dữ liệu từ máy chính trước.');
+        if (!silent) notify('Cloud chưa có dữ liệu. Hãy đẩy dữ liệu từ máy chính trước.');
         return result;
       }
 
-      const state = JSON.parse(base64ToUtf8(result.payload));
-      const ok = confirm(
-        `Tải dữ liệu cloud revision ${result.revision}?\n` +
-        'Dữ liệu ứng dụng trên trình duyệt này sẽ được thay thế.'
-      );
-      if (!ok) return result;
+      if (!force && isDirty()) {
+        throw new Error('Máy này có thay đổi chưa đẩy lên cloud. Không tự tải đè.');
+      }
 
+      if (!silent) {
+        const ok = confirm(
+          `Tải dữ liệu cloud revision ${result.revision}?\n` +
+          'Dữ liệu ứng dụng trên trình duyệt này sẽ được thay thế.'
+        );
+        if (!ok) return result;
+      }
+
+      const state = JSON.parse(base64ToUtf8(result.payload));
       applyState(state);
+      setDirty(false);
       setMeta({
         revision: Number(result.revision || 0),
         updatedAt: result.updatedAt || '',
         lastPullAt: new Date().toISOString()
       });
 
-      alert('Đã tải dữ liệu cloud. Trang sẽ tải lại.');
-      location.reload();
+      if (silent) {
+        location.reload();
+      } else {
+        alert('Đã tải dữ liệu cloud. Trang sẽ tải lại.');
+        location.reload();
+      }
       return result;
     } finally {
       syncing = false;
@@ -269,6 +301,7 @@
 
   function scheduleAutoPush() {
     if (!CFG.autoSync || !getToken(false)) return;
+    setDirty(true);
     clearTimeout(autoTimer);
     autoTimer = setTimeout(() => {
       pushCloud(false, true).catch(error => {
@@ -276,6 +309,45 @@
         updateStatus('Chưa đồng bộ: ' + error.message);
       });
     }, Number(CFG.autoSyncDelayMs || 5000));
+  }
+
+  async function pollRemote() {
+    if (syncing || document.hidden || !getToken(false)) return;
+    try {
+      const remote = await getRemoteMeta();
+      if (!remote || !remote.exists) return;
+
+      const local = getMeta();
+      const remoteRevision = Number(remote.revision || 0);
+      const localRevision = Number(local.revision || 0);
+
+      if (remoteRevision <= localRevision) return;
+
+      setMeta({...local, remoteRevision, remoteUpdatedAt: remote.updatedAt || ''});
+
+      if (!isDirty() && !isEditing()) {
+        updateStatus(`Có dữ liệu mới r${remoteRevision} – đang tự cập nhật...`);
+        await pullCloud({silent: true, force: true});
+        return;
+      }
+
+      if (lastRemoteNoticeRevision !== remoteRevision) {
+        lastRemoteNoticeRevision = remoteRevision;
+        notify(
+          `Cloud có dữ liệu mới revision ${remoteRevision}. ` +
+          'Máy này đang chỉnh sửa hoặc có thay đổi chưa đồng bộ, nên chưa tự tải đè.'
+        );
+      }
+      updateStatus(`Cloud mới hơn: r${remoteRevision} • máy này r${localRevision}`);
+    } catch (error) {
+      console.warn('[Cloud poll]', error);
+    }
+  }
+
+  function startPolling() {
+    clearInterval(pollTimer);
+    pollTimer = setInterval(pollRemote, POLL_MS);
+    setTimeout(pollRemote, 2500);
   }
 
   function hookApplicationSaves() {
@@ -300,42 +372,61 @@
       wrapped.__cloudWrapped = true;
       window.setDB = wrapped;
     }
+
+    const originalSetItem = localStorage.setItem.bind(localStorage);
+    if (!localStorage.__tdCloudPatched) {
+      localStorage.setItem = function(key, value) {
+        originalSetItem(key, value);
+        if (
+          typeof key === 'string' &&
+          key.startsWith(SYNCABLE_PREFIX) &&
+          !EXCLUDED_KEYS.has(key)
+        ) {
+          scheduleAutoPush();
+        }
+      };
+      localStorage.__tdCloudPatched = true;
+    }
   }
 
   function notify(message) {
-    if (typeof window.toast === 'function') {
-      window.toast(message);
-    } else {
-      alert(message);
-    }
+    if (typeof window.toast === 'function') window.toast(message);
+    else alert(message);
   }
 
   function updateStatus(customText = '') {
     const el = document.getElementById('tdCloudStatus');
-    if (!el) return;
+    const badge = document.getElementById('tdCloudBadge');
     const meta = getMeta();
-    if (customText) {
-      el.textContent = customText;
-      return;
+
+    let text = customText;
+    if (!text) {
+      if (!getToken(false)) text = 'Chưa nhập API token';
+      else if (isDirty()) text = `Có thay đổi chưa đồng bộ${meta.revision ? ' • cloud r' + meta.revision : ''}`;
+      else if (meta.revision) {
+        text = `Cloud r${meta.revision}${meta.updatedAt ? ' • ' + new Date(meta.updatedAt).toLocaleString('vi-VN') : ''}`;
+      } else text = 'Cloud đã cấu hình, chưa có revision';
     }
-    el.textContent = meta.revision
-      ? `Cloud r${meta.revision}${meta.updatedAt ? ' • ' + new Date(meta.updatedAt).toLocaleString('vi-VN') : ''}`
-      : (getToken(false) ? 'Cloud đã cấu hình, chưa có revision' : 'Chưa nhập API token');
+
+    if (el) el.textContent = text;
+    if (badge) {
+      badge.textContent = isDirty() ? '● Chưa đồng bộ' : (meta.revision ? `● r${meta.revision}` : '● Cloud');
+      badge.style.color = isDirty() ? '#fbbf24' : '#4ade80';
+    }
   }
 
   function run(action) {
-    Promise.resolve()
-      .then(action)
-      .catch(error => {
-        console.error('[Cloud V8]', error);
-        alert('Lỗi Cloud: ' + (error.message || error));
-      });
+    Promise.resolve().then(action).catch(error => {
+      console.error('[Cloud V8.1]', error);
+      alert('Lỗi Cloud: ' + (error.message || error));
+    });
   }
 
   function clearToken() {
     if (!confirm('Xóa API token đang lưu trên trình duyệt này?')) return;
     localStorage.removeItem(TOKEN_KEY);
     setMeta({});
+    setDirty(false);
     updateStatus();
     notify('Đã xóa API token trên máy này.');
   }
@@ -347,14 +438,14 @@
     panel.id = 'tdCloudPanel';
     panel.style.cssText = `
       position:fixed;right:16px;bottom:16px;z-index:60;
-      width:min(420px,calc(100vw - 32px));background:#0b1728;
+      width:min(430px,calc(100vw - 32px));background:#0b1728;
       border:1px solid #263955;border-radius:16px;padding:14px;
       color:#e9f1ff;box-shadow:0 22px 60px rgba(0,0,0,.45);
       display:none
     `;
     panel.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-        <b style="font-size:17px">☁ Đồng bộ Google Sheets</b>
+        <b style="font-size:17px">☁ Đồng bộ Google Sheets V8.1</b>
         <button id="tdCloudClose" class="btn">✕</button>
       </div>
       <div id="tdCloudStatus" class="muted" style="margin:10px 0 12px"></div>
@@ -366,7 +457,7 @@
       </div>
       <button id="tdCloudToken" class="btn" style="width:100%;margin-top:8px">🔑 Đổi / xóa API token</button>
       <p class="muted" style="font-size:12px;margin:10px 0 0">
-        Tự đồng bộ sau khi lưu/import. Khi có xung đột, hệ thống không tự ghi đè dữ liệu máy khác.
+        Tự đẩy sau khi lưu/import. Mỗi 15 giây kiểm tra dữ liệu mới và tự tải khi máy này không có thay đổi chưa lưu.
       </p>
     `;
     document.body.appendChild(panel);
@@ -376,7 +467,7 @@
       const open = document.createElement('button');
       open.id = 'tdCloudOpen';
       open.className = 'btn blue';
-      open.textContent = '☁ Cloud';
+      open.innerHTML = `☁ Cloud <span id="tdCloudBadge" style="font-size:11px;color:#4ade80"></span>`;
       open.onclick = () => {
         panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
         updateStatus();
@@ -387,7 +478,7 @@
     document.getElementById('tdCloudClose').onclick = () => panel.style.display = 'none';
     document.getElementById('tdCloudCheck').onclick = () => run(checkApi);
     document.getElementById('tdCloudPush').onclick = () => run(() => pushCloud(false, false));
-    document.getElementById('tdCloudPull').onclick = () => run(pullCloud);
+    document.getElementById('tdCloudPull').onclick = () => run(() => pullCloud({silent:false, force:false}));
     document.getElementById('tdCloudForce').onclick = () => {
       if (confirm('Ghi đè dữ liệu cloud bằng dữ liệu máy này?')) run(() => pushCloud(true, false));
     };
@@ -397,24 +488,31 @@
 
   function init() {
     if (!CFG.apiUrl) {
-      console.error('[Cloud V8] Thiếu apiUrl trong cloud-config.js');
+      console.error('[Cloud V8.1] Thiếu apiUrl trong cloud-config.js');
       return;
     }
+
     getDeviceId();
     injectUi();
     hookApplicationSaves();
+    startPolling();
 
-    // Re-hook after login/render patches replace global functions.
     setTimeout(hookApplicationSaves, 1500);
     setTimeout(hookApplicationSaves, 4000);
+
+    window.addEventListener('focus', pollRemote);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) pollRemote();
+    });
   }
 
   window.TDCloud = Object.freeze({
     check: checkApi,
     push: () => pushCloud(false, false),
-    pull: pullCloud,
+    pull: () => pullCloud({silent:false, force:false}),
     forcePush: () => pushCloud(true, false),
-    clearToken
+    clearToken,
+    poll: pollRemote
   });
 
   if (document.readyState === 'loading') {
